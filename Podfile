@@ -7,6 +7,7 @@ target 'Wall Of Fame' do
 
   # Pods for Wall Of Fame
 	pod 'Alamofire'
+  pod 'AlamofireObjectMapper'
   target 'Wall Of FameTests' do
     inherit! :search_paths
     # Pods for testing
