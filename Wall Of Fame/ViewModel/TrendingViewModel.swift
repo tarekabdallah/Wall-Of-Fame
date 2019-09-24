@@ -11,7 +11,7 @@ import Alamofire
 class TrendingViewModel{
     private(set) var webService :WebService!
     
-    private let gitRepositories:[GitRepositoryModel] = [GitRepositoryModel]()
+    private var trendingGitRepositories:[GitRepositoryModel] = [GitRepositoryModel]()
     var page:Int = 0
     init(webService:WebService) {
         self.webService = webService
@@ -19,52 +19,40 @@ class TrendingViewModel{
 }
 extension TrendingViewModel{
     func getRepoName(index:Int) -> String{
-        return gitRepositories[index].name
+        return trendingGitRepositories[index].name
     }
     
     func getRepoDescription(index:Int) -> String{
-        return gitRepositories[index].description
+        return trendingGitRepositories[index].description
     }
 
     func getRepoURL(index:Int) -> String{
-        return gitRepositories[index].url
+        return trendingGitRepositories[index].url
     }
 
     func getRepoStars(index:Int) -> Int{
-        return gitRepositories[index].stars
+        return trendingGitRepositories[index].stars
     }
     func getRepoOwnerName(index:Int) -> String{
-        return gitRepositories[index].owner.name
+        return trendingGitRepositories[index].owner.name
     }
     func getRepoOwnerAvatarURL(index:Int) -> URL{
-        return URL(string: gitRepositories[index].owner.avatar)!
+        return URL(string: trendingGitRepositories[index].owner.avatar)!
     }
     func getRepoOwnerAccountURL(index:Int) -> URL{
-        return URL(string: gitRepositories[index].owner.accountURL)!
+        return URL(string: trendingGitRepositories[index].owner.accountURL)!
     }
-}
+    func getTrendingRepoCount() -> Int{
+        return trendingGitRepositories.count
+    }
 
-
-extension DataRequest {
-    fileprivate func decodableResponseSerializer<T: Decodable>() -> DataResponseSerializer<T> {
-        return DataResponseSerializer { _, response, data, error in
-            guard error == nil else { return .failure(error!) }
-            
-            guard let data = data else {
-                return .failure(AFError.responseSerializationFailed(reason: .inputDataNil))
-            }
-            
-            return Result { try JSONDecoder().decode(T.self, from: data) }
+    func fetchTrendingRepositories(completed:@escaping (_ success:Bool)->Void){
+        self.webService.requestFetchGitRepositories(page: page, success: { (trendingRepositories) in
+            self.trendingGitRepositories = trendingRepositories
+            self.page += 1
+            completed(true)
+        }) { (message) in
+            completed(false)
         }
-    }
-    
-    @discardableResult
-    fileprivate func responseDecodable<T: Decodable>(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
-        return response(queue: queue, responseSerializer: decodableResponseSerializer(), completionHandler: completionHandler)
-    }
-    
-    @discardableResult
-    func responseRepositories(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<[GitRepositoryModel]>) -> Void) -> Self {
-        return responseDecodable(queue: queue, completionHandler: completionHandler)
     }
 }
