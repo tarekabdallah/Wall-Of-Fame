@@ -8,13 +8,15 @@
 
 import Foundation
 import Alamofire
+import AlamofireObjectMapper
 class WebService {
     static let shared = WebService()
     func requestFetchGitRepositories(page:Int, success:@escaping (_ repositories:[GitRepositoryModel]) -> Void, failure:@escaping (_ message:String) -> Void){
-        let url = "https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=\(page)"
+        let url = "https://api.github.com/search/repositories"
         
-        Alamofire.request(url).responseRepositories { (response) in
+        Alamofire.request(url, parameters: ["q":"created:>2017-10-22","sort":"stars","order":"desc","page":page], encoding: URLEncoding.queryString).responseArray(queue: DispatchQueue.main, keyPath: "items") { (response: DataResponse<[GitRepositoryModel]>) in
             if let error = response.error{
+                print(error.localizedDescription)
                 failure(error.localizedDescription)
                 return
             }
@@ -22,6 +24,7 @@ class WebService {
                 success(repositories)
                 return
             }
+
         }
     }
 }

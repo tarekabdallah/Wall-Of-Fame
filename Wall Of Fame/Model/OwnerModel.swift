@@ -7,19 +7,23 @@
 //
 
 import Foundation
-class OwnerModel:Codable{
-    let name:String
-    let id:Int
-    let avatar:String
-    let accountURL:String
-
-    enum CodingKeys: String, CodingKey {
-        case name = "login"
-        case id = "id"
-        case avatar = "avatar_url"
-        case accountURL = "html_url"
-    }
+import ObjectMapper
+class OwnerModel:Mappable{
     
+    var name:String!
+    var id:Int!
+    var avatar:String!
+    var accountURL:String!
+    required init?(map: Map) {
+    }
+
+     func mapping(map: Map) {
+        name        <- map["login"]
+        id          <- map["id"]
+        avatar      <- map["avatar_url"]
+        accountURL  <- map["html_url"]
+    }
+
     init(name:String, id:Int, avatar:String, accountURL:String) {
         self.name = name
         self.id = id

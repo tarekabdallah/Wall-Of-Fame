@@ -7,20 +7,27 @@
 //
 
 import Foundation
-class GitRepositoryModel:Codable{
-    let name:String
-    let description:String
-    let url:String
-    let stars:Int
-    let owner:OwnerModel
+import ObjectMapper
+class GitRepositoryModel:Mappable{
     
-    enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case description = "description"
-        case url = "url"
-        case stars = "stargazers_Count"
-        case owner = "owner"
+    var name:String!
+    var description:String!
+    var url:String!
+    var stars:Int!
+    var owner:OwnerModel!
+    
+    required init?(map: Map) {
     }
+
+    func mapping(map: Map) {
+        name        <- map["name"]
+        description <- map["description"]
+        url         <- map["html_url"]
+        stars       <- map["stargazers_count"]
+        owner       <- map["owner"]
+
+    }
+
     init(name:String, description:String, url:String, stars:Int, owner:OwnerModel) {
         self.name = name
         self.description = description
@@ -29,4 +36,5 @@ class GitRepositoryModel:Codable{
         self.owner = owner
     }
 
+    
 }
