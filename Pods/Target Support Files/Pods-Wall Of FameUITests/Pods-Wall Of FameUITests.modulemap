@@ -1,0 +1,6 @@
+framework module Pods_Wall_Of_FameUITests {
+  umbrella header "Pods-Wall Of FameUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

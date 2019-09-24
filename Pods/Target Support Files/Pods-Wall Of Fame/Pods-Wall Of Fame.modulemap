@@ -1,0 +1,6 @@
+framework module Pods_Wall_Of_Fame {
+  umbrella header "Pods-Wall Of Fame-umbrella.h"
+
+  export *
+  module * { export * }
+}

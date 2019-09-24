@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18DA001B479C2BE2C7DCB989 /* Pods_Wall_Of_FameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5BBBF5B74E30522430E12 /* Pods_Wall_Of_FameTests.framework */; };
+		1E37AE6C887945C77793F4A2 /* Pods_Wall_Of_FameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F47A50D05E188C0D1F7F2A7 /* Pods_Wall_Of_FameUITests.framework */; };
+		4809AB632C440503CC622BE0 /* Pods_Wall_Of_Fame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2FE4EFFFB4BFBDC1F7AE4 /* Pods_Wall_Of_Fame.framework */; };
 		9093878D233A9FDF00732E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093878C233A9FDF00732E73 /* AppDelegate.swift */; };
 		9093878F233A9FDF00732E73 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093878E233A9FDF00732E73 /* TrendingViewController.swift */; };
 		90938792233A9FDF00732E73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90938790233A9FDF00732E73 /* Main.storyboard */; };
@@ -38,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01B2FE4EFFFB4BFBDC1F7AE4 /* Pods_Wall_Of_Fame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wall_Of_Fame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15FF6484F86997436ECFA8DE /* Pods-Wall Of FameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall Of FameTests.release.xcconfig"; path = "Target Support Files/Pods-Wall Of FameTests/Pods-Wall Of FameTests.release.xcconfig"; sourceTree = "<group>"; };
+		38851CF966A48A4247FE4D1D /* Pods-Wall Of Fame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall Of Fame.debug.xcconfig"; path = "Target Support Files/Pods-Wall Of Fame/Pods-Wall Of Fame.debug.xcconfig"; sourceTree = "<group>"; };
+		3F47A50D05E188C0D1F7F2A7 /* Pods_Wall_Of_FameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wall_Of_FameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B2DF429D52DD434601CCDB1 /* Pods-Wall Of FameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall Of FameUITests.release.xcconfig"; path = "Target Support Files/Pods-Wall Of FameUITests/Pods-Wall Of FameUITests.release.xcconfig"; sourceTree = "<group>"; };
+		87C050D60F991297C6FF240A /* Pods-Wall Of FameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall Of FameTests.debug.xcconfig"; path = "Target Support Files/Pods-Wall Of FameTests/Pods-Wall Of FameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		90938789233A9FDF00732E73 /* Wall Of Fame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wall Of Fame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9093878C233A9FDF00732E73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9093878E233A9FDF00732E73 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +64,9 @@
 		909387BF233AA68400732E73 /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
 		909387C2233AA92400732E73 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		909387C4233AA97E00732E73 /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModel.swift; sourceTree = "<group>"; };
+		9B68770E4ABD27FAB7EDE976 /* Pods-Wall Of FameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall Of FameUITests.debug.xcconfig"; path = "Target Support Files/Pods-Wall Of FameUITests/Pods-Wall Of FameUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A6A5BBBF5B74E30522430E12 /* Pods_Wall_Of_FameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wall_Of_FameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC487F5DEC7F8AF619DA640 /* Pods-Wall Of Fame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall Of Fame.release.xcconfig"; path = "Target Support Files/Pods-Wall Of Fame/Pods-Wall Of Fame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4809AB632C440503CC622BE0 /* Pods_Wall_Of_Fame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DA001B479C2BE2C7DCB989 /* Pods_Wall_Of_FameTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +90,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E37AE6C887945C77793F4A2 /* Pods_Wall_Of_FameUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D155032F844A5A46BC9311A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38851CF966A48A4247FE4D1D /* Pods-Wall Of Fame.debug.xcconfig */,
+				EDC487F5DEC7F8AF619DA640 /* Pods-Wall Of Fame.release.xcconfig */,
+				87C050D60F991297C6FF240A /* Pods-Wall Of FameTests.debug.xcconfig */,
+				15FF6484F86997436ECFA8DE /* Pods-Wall Of FameTests.release.xcconfig */,
+				9B68770E4ABD27FAB7EDE976 /* Pods-Wall Of FameUITests.debug.xcconfig */,
+				4B2DF429D52DD434601CCDB1 /* Pods-Wall Of FameUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		90938780233A9FDF00732E73 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +118,8 @@
 				909387A0233A9FE100732E73 /* Wall Of FameTests */,
 				909387AB233A9FE100732E73 /* Wall Of FameUITests */,
 				9093878A233A9FDF00732E73 /* Products */,
+				8D155032F844A5A46BC9311A /* Pods */,
+				97E06532207E9D24DC54F0A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +200,16 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		97E06532207E9D24DC54F0A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01B2FE4EFFFB4BFBDC1F7AE4 /* Pods_Wall_Of_Fame.framework */,
+				A6A5BBBF5B74E30522430E12 /* Pods_Wall_Of_FameTests.framework */,
+				3F47A50D05E188C0D1F7F2A7 /* Pods_Wall_Of_FameUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 909387B1233A9FE100732E73 /* Build configuration list for PBXNativeTarget "Wall Of Fame" */;
 			buildPhases = (
+				357982E8B7BFC15BA7E70678 /* [CP] Check Pods Manifest.lock */,
 				90938785233A9FDF00732E73 /* Sources */,
 				90938786233A9FDF00732E73 /* Frameworks */,
 				90938787233A9FDF00732E73 /* Resources */,
+				795D587AEC1B32DFA09FA6BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +236,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 909387B4233A9FE100732E73 /* Build configuration list for PBXNativeTarget "Wall Of FameTests" */;
 			buildPhases = (
+				128F1DE3B71F433A312EE225 /* [CP] Check Pods Manifest.lock */,
 				90938799233A9FE100732E73 /* Sources */,
 				9093879A233A9FE100732E73 /* Frameworks */,
 				9093879B233A9FE100732E73 /* Resources */,
@@ -211,6 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 909387B7233A9FE100732E73 /* Build configuration list for PBXNativeTarget "Wall Of FameUITests" */;
 			buildPhases = (
+				AC9B26D86FC221AF2F4DA336 /* [CP] Check Pods Manifest.lock */,
 				909387A4233A9FE100732E73 /* Sources */,
 				909387A5233A9FE100732E73 /* Frameworks */,
 				909387A6233A9FE100732E73 /* Resources */,
@@ -294,6 +339,97 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		128F1DE3B71F433A312EE225 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wall Of FameTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		357982E8B7BFC15BA7E70678 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wall Of Fame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		795D587AEC1B32DFA09FA6BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wall Of Fame/Pods-Wall Of Fame-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wall Of Fame/Pods-Wall Of Fame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC9B26D86FC221AF2F4DA336 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wall Of FameUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		90938785233A9FDF00732E73 /* Sources */ = {
@@ -478,6 +614,7 @@
 		};
 		909387B2233A9FE100732E73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38851CF966A48A4247FE4D1D /* Pods-Wall Of Fame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -496,6 +633,7 @@
 		};
 		909387B3233A9FE100732E73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDC487F5DEC7F8AF619DA640 /* Pods-Wall Of Fame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -514,6 +652,7 @@
 		};
 		909387B5233A9FE100732E73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87C050D60F991297C6FF240A /* Pods-Wall Of FameTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -535,6 +674,7 @@
 		};
 		909387B6233A9FE100732E73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15FF6484F86997436ECFA8DE /* Pods-Wall Of FameTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -556,6 +696,7 @@
 		};
 		909387B8233A9FE100732E73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B68770E4ABD27FAB7EDE976 /* Pods-Wall Of FameUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -576,6 +717,7 @@
 		};
 		909387B9233A9FE100732E73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B2DF429D52DD434601CCDB1 /* Pods-Wall Of FameUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
