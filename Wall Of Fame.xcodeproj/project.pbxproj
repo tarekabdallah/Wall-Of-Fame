@@ -10,6 +10,9 @@
 		18DA001B479C2BE2C7DCB989 /* Pods_Wall_Of_FameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5BBBF5B74E30522430E12 /* Pods_Wall_Of_FameTests.framework */; };
 		1E37AE6C887945C77793F4A2 /* Pods_Wall_Of_FameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F47A50D05E188C0D1F7F2A7 /* Pods_Wall_Of_FameUITests.framework */; };
 		4809AB632C440503CC622BE0 /* Pods_Wall_Of_Fame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2FE4EFFFB4BFBDC1F7AE4 /* Pods_Wall_Of_Fame.framework */; };
+		90836F1E23428884000E7B35 /* GitRepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90836F1C23428884000E7B35 /* GitRepositoryTableViewCell.swift */; };
+		90836F1F23428884000E7B35 /* GitRepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90836F1D23428884000E7B35 /* GitRepositoryTableViewCell.xib */; };
+		90836F2523428F10000E7B35 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90836F2423428F10000E7B35 /* UIImageViewExtension.swift */; };
 		9093878D233A9FDF00732E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093878C233A9FDF00732E73 /* AppDelegate.swift */; };
 		9093878F233A9FDF00732E73 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093878E233A9FDF00732E73 /* TrendingViewController.swift */; };
 		90938792233A9FDF00732E73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90938790233A9FDF00732E73 /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		3F47A50D05E188C0D1F7F2A7 /* Pods_Wall_Of_FameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wall_Of_FameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2DF429D52DD434601CCDB1 /* Pods-Wall Of FameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall Of FameUITests.release.xcconfig"; path = "Target Support Files/Pods-Wall Of FameUITests/Pods-Wall Of FameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		87C050D60F991297C6FF240A /* Pods-Wall Of FameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall Of FameTests.debug.xcconfig"; path = "Target Support Files/Pods-Wall Of FameTests/Pods-Wall Of FameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90836F1C23428884000E7B35 /* GitRepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		90836F1D23428884000E7B35 /* GitRepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitRepositoryTableViewCell.xib; sourceTree = "<group>"; };
+		90836F2423428F10000E7B35 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		90938789233A9FDF00732E73 /* Wall Of Fame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wall Of Fame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9093878C233A9FDF00732E73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9093878E233A9FDF00732E73 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
@@ -107,8 +113,40 @@
 				9B68770E4ABD27FAB7EDE976 /* Pods-Wall Of FameUITests.debug.xcconfig */,
 				4B2DF429D52DD434601CCDB1 /* Pods-Wall Of FameUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		90836F1B23428855000E7B35 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				90836F1C23428884000E7B35 /* GitRepositoryTableViewCell.swift */,
+				90836F1D23428884000E7B35 /* GitRepositoryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		90836F2123428E1B000E7B35 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				90836F2323428EFF000E7B35 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		90836F2223428E24000E7B35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9093878E233A9FDF00732E73 /* TrendingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		90836F2323428EFF000E7B35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				90836F2423428F10000E7B35 /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		90938780233A9FDF00732E73 = {
@@ -136,6 +174,8 @@
 		9093878B233A9FDF00732E73 /* Wall Of Fame */ = {
 			isa = PBXGroup;
 			children = (
+				90836F2223428E24000E7B35 /* Controller */,
+				90836F2123428E1B000E7B35 /* Utils */,
 				909387C1233AA91500732E73 /* Service */,
 				909387BC233AA01E00732E73 /* ViewModel */,
 				909387BB233AA01400732E73 /* View */,
@@ -179,7 +219,7 @@
 		909387BB233AA01400732E73 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9093878E233A9FDF00732E73 /* TrendingViewController.swift */,
+				90836F1B23428855000E7B35 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,6 +360,7 @@
 			files = (
 				90938797233A9FE100732E73 /* LaunchScreen.storyboard in Resources */,
 				90938794233A9FE100732E73 /* Assets.xcassets in Resources */,
+				90836F1F23428884000E7B35 /* GitRepositoryTableViewCell.xib in Resources */,
 				90938792233A9FDF00732E73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,12 +481,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90836F1E23428884000E7B35 /* GitRepositoryTableViewCell.swift in Sources */,
 				9093878F233A9FDF00732E73 /* TrendingViewController.swift in Sources */,
 				909387C5233AA97E00732E73 /* TrendingViewModel.swift in Sources */,
 				9093878D233A9FDF00732E73 /* AppDelegate.swift in Sources */,
 				909387BE233AA15D00732E73 /* GitRepositoryModel.swift in Sources */,
 				909387C3233AA92400732E73 /* WebService.swift in Sources */,
 				909387C0233AA68400732E73 /* OwnerModel.swift in Sources */,
+				90836F2523428F10000E7B35 /* UIImageViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
