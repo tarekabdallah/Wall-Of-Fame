@@ -13,6 +13,7 @@
 		90836F1E23428884000E7B35 /* GitRepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90836F1C23428884000E7B35 /* GitRepositoryTableViewCell.swift */; };
 		90836F1F23428884000E7B35 /* GitRepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90836F1D23428884000E7B35 /* GitRepositoryTableViewCell.xib */; };
 		90836F2523428F10000E7B35 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90836F2423428F10000E7B35 /* UIImageViewExtension.swift */; };
+		90836F27234292AF000E7B35 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90836F26234292AF000E7B35 /* UIViewExtension.swift */; };
 		9093878D233A9FDF00732E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093878C233A9FDF00732E73 /* AppDelegate.swift */; };
 		9093878F233A9FDF00732E73 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093878E233A9FDF00732E73 /* TrendingViewController.swift */; };
 		90938792233A9FDF00732E73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90938790233A9FDF00732E73 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		90836F1C23428884000E7B35 /* GitRepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		90836F1D23428884000E7B35 /* GitRepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitRepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		90836F2423428F10000E7B35 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		90836F26234292AF000E7B35 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		90938789233A9FDF00732E73 /* Wall Of Fame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wall Of Fame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9093878C233A9FDF00732E73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9093878E233A9FDF00732E73 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				90836F2423428F10000E7B35 /* UIImageViewExtension.swift */,
+				90836F26234292AF000E7B35 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				9093878D233A9FDF00732E73 /* AppDelegate.swift in Sources */,
 				909387BE233AA15D00732E73 /* GitRepositoryModel.swift in Sources */,
 				909387C3233AA92400732E73 /* WebService.swift in Sources */,
+				90836F27234292AF000E7B35 /* UIViewExtension.swift in Sources */,
 				909387C0233AA68400732E73 /* OwnerModel.swift in Sources */,
 				90836F2523428F10000E7B35 /* UIImageViewExtension.swift in Sources */,
 			);
