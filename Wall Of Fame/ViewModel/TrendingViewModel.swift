@@ -11,7 +11,7 @@ import Alamofire
 class TrendingViewModel{
     private(set) var webService :WebService!
     
-    private var trendingGitRepositories:[GitRepositoryModel] = [GitRepositoryModel]()
+    var trendingGitRepositories:[GitRepositoryModel] = [GitRepositoryModel]()
     var page:Int = 0
     init(webService:WebService) {
         self.webService = webService
