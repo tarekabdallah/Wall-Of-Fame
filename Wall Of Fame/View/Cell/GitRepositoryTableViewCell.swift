@@ -10,6 +10,11 @@ import UIKit
 
 class GitRepositoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var ownerAliasImageView: UIImageView!
+    @IBOutlet weak var ownerNameLabel: UILabel!
+    @IBOutlet weak var repoNameLabel: UILabel!
+    @IBOutlet weak var repoDescriptionLabel: UILabel!
+    @IBOutlet weak var starsLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +24,13 @@ class GitRepositoryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    func setup(repo:GitRepositoryModel){
+        ownerAliasImageView.downloadedFrom(link: repo.owner.avatar)
+        repoNameLabel.text = repo.name
+        repoDescriptionLabel.text = repo.description
+        starsLabel.text = "\(repo.stars ?? 0)"
+        ownerNameLabel.text = repo.owner.name
     }
     
 }
