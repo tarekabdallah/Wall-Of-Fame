@@ -7,8 +7,28 @@
 //
 
 import Foundation
-import UIImage
+import UIKit
+private var circular: Bool = false
 extension UIImageView{
+    @IBInspectable var isCircular: Bool {
+        get{
+            guard let value = objc_getAssociatedObject(self, &circular) as? Bool else {
+                return false
+            }
+            return value
+        }
+        set(newValue){
+            objc_setAssociatedObject(self, &circular, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+
+            if newValue{
+                layer.cornerRadius = frame.width/2
+            }else{
+                layer.cornerRadius = cornerRadius
+            }
+        }
+    }
+    
+    
     func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
         let imageCache = NSCache<NSString, UIImage>()
@@ -34,5 +54,6 @@ extension UIImageView{
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
     }
-
+    
+    
 }
