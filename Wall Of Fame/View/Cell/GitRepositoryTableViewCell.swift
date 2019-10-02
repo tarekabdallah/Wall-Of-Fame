@@ -15,9 +15,13 @@ class GitRepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var repoNameLabel: UILabel!
     @IBOutlet weak var repoDescriptionLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
+    @IBOutlet weak var backgroundCardView: UIView!
+    @IBOutlet weak var starsImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundCardView.dropShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,6 +35,7 @@ class GitRepositoryTableViewCell: UITableViewCell {
         repoDescriptionLabel.text = repo.description
         starsLabel.text = "\(repo.stars ?? 0)"
         ownerNameLabel.text = repo.owner.name
+        starsImageView.image = UIImage(named: "star")?.withRenderingMode(.alwaysTemplate)
     }
     
 }
