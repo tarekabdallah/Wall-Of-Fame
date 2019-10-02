@@ -59,6 +59,7 @@ extension TrendingViewModel{
             print("page: \(self.page) size: \(trendingRepositories.count) totalSize: \(self.getTrendingRepoCount())")
             completed?(true)
         }) { (message) in
+            
             completed?(false)
         }
     }

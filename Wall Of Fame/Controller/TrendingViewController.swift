@@ -11,7 +11,9 @@ import UIKit
 class TrendingViewController: UIViewController {
 
     @IBOutlet weak var tableView:UITableView!
-    
+    private var loadingView: UIView!
+    private var indicator: UIActivityIndicatorView!
+
     var trendingViewModel:TrendingViewModel = TrendingViewModel(webService: WebService.shared)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,12 @@ class TrendingViewController: UIViewController {
         fetchTrendingRepositories()
     }
     func fetchTrendingRepositories(){
-        trendingViewModel.fetchTrendingRepositories(tableView: self.tableView)
+        createLoadingView()
+        indicator.startAnimating()
+        trendingViewModel.fetchTrendingRepositories(tableView: self.tableView) { (success) in
+            self.indicator.stopAnimating()
+            self.tableView.tableFooterView = nil
+        }
     }
 
 }
@@ -52,5 +59,29 @@ extension TrendingViewController:UITableViewDataSource,UITableViewDelegate{
 //        }
 
     }
-    
+    private func createLoadingView() {
+
+        loadingView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        indicator = UIActivityIndicatorView()
+        indicator.color = UIColor.lightGray
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.startAnimating()
+        loadingView.addSubview(indicator)
+        centerIndicator()
+        self.tableView.tableFooterView = loadingView
+    }
+    private func centerIndicator() {
+        let xCenterConstraint = NSLayoutConstraint(
+            item: loadingView, attribute: .centerX, relatedBy: .equal,
+            toItem: indicator, attribute: .centerX, multiplier: 1, constant: 0
+        )
+        loadingView.addConstraint(xCenterConstraint)
+        
+        let yCenterConstraint = NSLayoutConstraint(
+            item: loadingView, attribute: .centerY, relatedBy: .equal,
+            toItem: indicator, attribute: .centerY, multiplier: 1, constant: 0
+        )
+        loadingView.addConstraint(yCenterConstraint)
+    }
+
 }
