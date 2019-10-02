@@ -31,6 +31,7 @@ extension UIImageView{
     
     func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
+        self.image = UIImage(named: "placeholder")
         let imageCache = NSCache<NSString, UIImage>()
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
             self.image = cachedImage
