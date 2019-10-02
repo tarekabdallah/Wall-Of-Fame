@@ -46,13 +46,20 @@ extension TrendingViewModel{
         return trendingGitRepositories.count
     }
 
-    func fetchTrendingRepositories(completed:@escaping (_ success:Bool)->Void){
+    func fetchTrendingRepositories(tableView:UITableView, completed:((_ success:Bool)->Void)? = nil){
         self.webService.requestFetchGitRepositories(page: page, success: { (trendingRepositories) in
-            self.trendingGitRepositories = trendingRepositories
+            var indexes:[IndexPath] = []
+            for repo in trendingRepositories{
+                indexes.append(IndexPath(row: self.trendingGitRepositories.count , section: 0))
+                self.trendingGitRepositories.append(repo)
+            }
+            tableView.insertRows(at: indexes, with: .right)
+
             self.page += 1
-            completed(true)
+            print("page: \(self.page) size: \(trendingRepositories.count) totalSize: \(self.getTrendingRepoCount())")
+            completed?(true)
         }) { (message) in
-            completed(false)
+            completed?(false)
         }
     }
 }
