@@ -33,8 +33,13 @@ class GitRepositoryTableViewCell: UITableViewCell {
         ownerAliasImageView.downloadedFrom(link: repo.owner.avatar)
         repoNameLabel.text = repo.name
         repoDescriptionLabel.text = repo.description
-        starsLabel.text = "\(repo.stars ?? 0)"
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        
+        formatter.locale = Locale(identifier: "en_US")
+        starsLabel.text = formatter.string(from: NSNumber(value: repo.stars ?? 0))!
         ownerNameLabel.text = repo.owner.name
+        starsImageView.tintColor = UIColor(red: 246/255, green: 198/255, blue: 40/255, alpha: 1)
         starsImageView.image = UIImage(named: "star")?.withRenderingMode(.alwaysTemplate)
     }
     

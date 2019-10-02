@@ -10,12 +10,16 @@ import XCTest
 @testable import Wall_Of_Fame
 
 class Wall_Of_FameTests: XCTestCase {
+    var trendingViewModel:TrendingViewModel!
 
     override func setUp() {
+        trendingViewModel = TrendingViewModel(webService: WebService.shared)
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDown() {
+        trendingViewModel = nil
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
