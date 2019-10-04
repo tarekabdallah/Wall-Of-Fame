@@ -59,8 +59,10 @@ extension TrendingViewModel{
             print("page: \(self.page) size: \(trendingRepositories.count) totalSize: \(self.getTrendingRepoCount())")
             completed?(true,nil)
         }) { (message) in
-            print(message)
+            UIView.showErrorDialog(title: "Couldn't fetch repositories.", details: message, retry: {
+                self.fetchTrendingRepositories(tableView: tableView, completed: completed)
+            })
             completed?(false,message)
-        }
+        } 
     }
 }
