@@ -29,7 +29,7 @@ class TrendingViewController: UIViewController {
     func fetchTrendingRepositories(){
         createLoadingView()
         indicator.startAnimating()
-        trendingViewModel.fetchTrendingRepositories(tableView: self.tableView) { (success) in
+        trendingViewModel.fetchTrendingRepositories(tableView: self.tableView) { (success,message) in
             self.indicator.stopAnimating()
             self.tableView.tableFooterView = nil
         }

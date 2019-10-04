@@ -16,8 +16,8 @@ class WebService {
         
         Alamofire.request(url, parameters: ["q":"created:>2017-10-22","sort":"stars","order":"desc","page":page], encoding: URLEncoding.queryString).responseArray(queue: DispatchQueue.main, keyPath: "items") { (response: DataResponse<[GitRepositoryModel]>) in
             if let error = response.error{
-                print(error.localizedDescription)
-                failure(error.localizedDescription)
+                let json = try? JSONSerialization.jsonObject(with: response.data ?? Data(), options: JSONSerialization.ReadingOptions.mutableLeaves) as? [String:Any]
+                failure(json?["message"] as? String ?? error.localizedDescription)
                 return
             }
             if let repositories = response.result.value{
