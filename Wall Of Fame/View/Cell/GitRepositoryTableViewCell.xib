@@ -58,7 +58,6 @@
                                     <constraint firstAttribute="width" secondItem="vML-qV-7sg" secondAttribute="height" multiplier="1:1" id="jGZ-EY-6O8"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="renderImage" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                         <color key="value" red="0.96470588239999999" green="0.77647058820000003" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
