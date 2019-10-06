@@ -19,7 +19,7 @@ class DefaultTableView: UITableView {
     */
     private var loadingView: UIView!
     private var indicator: UIActivityIndicatorView!
-
+    @IBInspectable var emptyStateText:String = ""
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -31,6 +31,12 @@ class DefaultTableView: UITableView {
     func stopLoader(){
         self.indicator.stopAnimating()
         self.tableFooterView = nil
+        if self.numberOfRows(inSection: 0) == 0{
+            self.showEmptyState(WithDetails: emptyStateText)
+        }
+        else{
+            self.removeEmptyStateView()
+        }
     }
     private func createLoadingView() {
         
@@ -55,6 +61,30 @@ class DefaultTableView: UITableView {
             toItem: indicator, attribute: .centerY, multiplier: 1, constant: 0
         )
         loadingView.addConstraint(yCenterConstraint)
+    }
+    
+    func showEmptyState(WithDetails details:String){
+        for view in subviews{
+            if view is EmptyStateView{
+                return
+            }
+        }
+
+        let emptyStateView:EmptyStateView = EmptyStateView.instanceFromNib()
+        emptyStateView.frame = self.bounds
+        emptyStateView.setup(details: details)
+        self.addSubview(emptyStateView)
+        self.isScrollEnabled = false
+    }
+    
+    func removeEmptyStateView(){
+        for view in subviews{
+            if view is EmptyStateView{
+                view.removeFromSuperview()
+                self.isScrollEnabled = true
+                return
+            }
+        }
     }
     
 

@@ -58,6 +58,7 @@ extension TrendingViewModel{
 
             self.page += 1
             print("page: \(self.page) size: \(trendingRepositories.count) totalSize: \(self.getTrendingRepoCount())")
+            tableView?.stopLoader()
             completed?(true,nil)
         }) { (message) in
             tableView?.stopLoader()
