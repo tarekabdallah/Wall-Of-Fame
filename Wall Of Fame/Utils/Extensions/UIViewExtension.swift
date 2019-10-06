@@ -18,7 +18,7 @@ extension UIView{
             layer.masksToBounds = newValue > 0
         }
     }
-
+    
     func dropShadow(scale: Bool = true, opacity:Float = 0.7, cornerRadius:Int = 10) {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.gray.cgColor
@@ -27,7 +27,7 @@ extension UIView{
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
-
+    
     func  presentPopup(view:UIView, duration:Double = 0.3){
         view.transform = CGAffineTransform(scaleX: 0, y: 0)
         let backgroundView = UIView(frame: UIScreen.main.bounds)
@@ -70,7 +70,7 @@ extension UIView{
         }
         return true
     }
-
+    
     @objc func dismissPopup(sender: UITapGestureRecognizer, duration:Double = 0.3){
         var popupView:UIView!
         for v in subviews{
@@ -90,11 +90,18 @@ extension UIView{
         }
     }
     static func showErrorDialog(title:String, details:String, retry:@escaping () -> Void){
-        let alert = AlertView.instanceFromNib()
-        alert.frame = UIScreen.main.bounds
-        alert.titlelabel.text = title
-        alert.detailsLabel.text = details
-        alert.didRetry = retry
-        UIApplication.shared.keyWindow?.rootViewController?.view.presentPopup(view: alert)
+        if let displayView = UIApplication.shared.keyWindow?.rootViewController?.view{
+            for view in displayView.subviews{
+                if view is AlertView{
+                    return
+                }
+            }
+            let alert = AlertView.instanceFromNib()
+            alert.frame = UIScreen.main.bounds
+            alert.titlelabel.text = title
+            alert.detailsLabel.text = details
+            alert.didRetry = retry
+            displayView.presentPopup(view: alert)
+        }
     }
 }
