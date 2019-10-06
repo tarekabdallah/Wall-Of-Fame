@@ -45,7 +45,9 @@ extension UIImageView{
                     else { return }
                 DispatchQueue.main.async() { () -> Void in
                     imageCache.setObject(image, forKey: url.absoluteString as NSString)
-                    if indexPath != nil && tableView?.cellForRow(at: indexPath!) != nil{
+                    if indexPath == nil || tableView == nil{
+                        self.image = image
+                    }else if tableView!.cellForRow(at: indexPath!) != nil{
                         self.image = image
                     }
                 }
