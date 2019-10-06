@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Light 2.otf">
+            <string>Gotham-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wFf-vi-DnB" customClass="EmptyStateView" customModule="Wall_Of_Fame" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_doc" translatesAutoresizingMaskIntoConstraints="NO" id="5eB-c0-gyp" customClass="DefaultImageView" customModule="Wall_Of_Fame" customModuleProvider="target">
+                    <rect key="frame" x="144" y="235" width="126" height="126"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5eB-c0-gyp" secondAttribute="height" multiplier="1:1" id="DXd-nq-V2z"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="renderTemplate" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="tintHex" value="85878A"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="it's Empty!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vk0-WT-j9u">
+                    <rect key="frame" x="40" y="409" width="334" height="20"/>
+                    <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="17"/>
+                    <color key="textColor" red="0.52156862749999999" green="0.52941176469999995" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no repositories loaded." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebY-RZ-UJw">
+                    <rect key="frame" x="40" y="443" width="334" height="20"/>
+                    <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="17"/>
+                    <color key="textColor" red="0.52156862749999999" green="0.52941176469999995" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSR-Nw-H4e">
+                    <rect key="frame" x="107" y="503" width="200" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="63N-XZ-xB1"/>
+                        <constraint firstAttribute="height" constant="40" id="imL-ce-tnM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="Reload">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="didPressReload:" destination="wFf-vi-DnB" eventType="touchUpInside" id="kCb-C9-7BV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5eB-c0-gyp" firstAttribute="centerX" secondItem="c8r-py-jBV" secondAttribute="centerX" id="0Y0-aB-Qba"/>
+                <constraint firstItem="ebY-RZ-UJw" firstAttribute="centerY" secondItem="c8r-py-jBV" secondAttribute="centerY" id="9Y5-ia-YhE"/>
+                <constraint firstItem="ebY-RZ-UJw" firstAttribute="top" secondItem="Vk0-WT-j9u" secondAttribute="bottom" constant="14" id="Hee-gb-yZV"/>
+                <constraint firstItem="ebY-RZ-UJw" firstAttribute="centerX" secondItem="Vk0-WT-j9u" secondAttribute="centerX" id="MvP-LE-BRh"/>
+                <constraint firstItem="GSR-Nw-H4e" firstAttribute="top" secondItem="ebY-RZ-UJw" secondAttribute="bottom" constant="40" id="S0O-cr-Xru"/>
+                <constraint firstItem="GSR-Nw-H4e" firstAttribute="centerX" secondItem="ebY-RZ-UJw" secondAttribute="centerX" id="S13-bC-cEm"/>
+                <constraint firstItem="5eB-c0-gyp" firstAttribute="leading" secondItem="c8r-py-jBV" secondAttribute="leading" constant="144" id="VRT-zZ-aQL"/>
+                <constraint firstItem="ebY-RZ-UJw" firstAttribute="leading" secondItem="Vk0-WT-j9u" secondAttribute="leading" id="VaO-tA-87T"/>
+                <constraint firstItem="Vk0-WT-j9u" firstAttribute="top" secondItem="5eB-c0-gyp" secondAttribute="bottom" constant="48" id="fnO-j0-Ntt"/>
+                <constraint firstItem="Vk0-WT-j9u" firstAttribute="centerX" secondItem="5eB-c0-gyp" secondAttribute="centerX" id="jQy-AM-JTu"/>
+                <constraint firstItem="Vk0-WT-j9u" firstAttribute="leading" secondItem="c8r-py-jBV" secondAttribute="leading" constant="40" id="uhc-Gu-hZt"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="c8r-py-jBV"/>
+            <connections>
+                <outlet property="detailsLabel" destination="ebY-RZ-UJw" id="Hgz-0T-g7C"/>
+            </connections>
+            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="empty_doc" width="343" height="410"/>
+    </resources>
+</document>
