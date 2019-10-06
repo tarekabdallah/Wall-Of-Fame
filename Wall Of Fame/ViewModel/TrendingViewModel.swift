@@ -46,7 +46,8 @@ extension TrendingViewModel{
         return trendingGitRepositories.count
     }
 
-    func fetchTrendingRepositories(tableView:UITableView? = nil, completed:((_ success:Bool,_ message:String? )->Void)? = nil){
+    func fetchTrendingRepositories(tableView:DefaultTableView? = nil, completed:((_ success:Bool,_ message:String? )->Void)? = nil){
+        tableView?.startLoader()
         self.webService.requestFetchGitRepositories(page: page, success: { (trendingRepositories) in
             var indexes:[IndexPath] = []
             for repo in trendingRepositories{
@@ -59,6 +60,7 @@ extension TrendingViewModel{
             print("page: \(self.page) size: \(trendingRepositories.count) totalSize: \(self.getTrendingRepoCount())")
             completed?(true,nil)
         }) { (message) in
+            tableView?.stopLoader()
             UIView.showErrorDialog(title: "Couldn't fetch repositories.", details: message, retry: {
                 self.fetchTrendingRepositories(tableView: tableView, completed: completed)
             })
