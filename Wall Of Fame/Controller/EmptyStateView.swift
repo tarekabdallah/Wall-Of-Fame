@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+protocol EmptyStateViewDelegate{
+    func reloadButtonPressed()
+}
 class EmptyStateView:UIView{
     
     /*
@@ -18,7 +21,7 @@ class EmptyStateView:UIView{
      }
      */
     @IBOutlet weak var detailsLabel: UILabel!
-    
+    var delegate:EmptyStateViewDelegate?
     class func instanceFromNib() -> EmptyStateView{
         return UINib(nibName: "EmptyStateView", bundle: .main).instantiate(withOwner: nil, options: nil)[0] as! EmptyStateView
     }
@@ -29,6 +32,6 @@ class EmptyStateView:UIView{
 
     
     @IBAction func didPressReload(_ sender: Any){
-        
+        delegate?.reloadButtonPressed()
     }    
 }

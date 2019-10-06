@@ -20,6 +20,7 @@ class DefaultTableView: UITableView {
     private var loadingView: UIView!
     private var indicator: UIActivityIndicatorView!
     @IBInspectable var emptyStateText:String = ""
+    var emptyStateDelegate:EmptyStateViewDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -72,6 +73,7 @@ class DefaultTableView: UITableView {
 
         let emptyStateView:EmptyStateView = EmptyStateView.instanceFromNib()
         emptyStateView.frame = self.bounds
+        emptyStateView.delegate = emptyStateDelegate
         emptyStateView.setup(details: details)
         self.addSubview(emptyStateView)
         self.isScrollEnabled = false

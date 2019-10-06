@@ -20,6 +20,7 @@ class TrendingViewController: UIViewController {
         tableView.bounces = false
         tableView.register(UINib(nibName: "GitRepositoryTableViewCell", bundle: .main), forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
+        tableView.emptyStateDelegate = self
         // Do any additional setup after loading the view.
         
         fetchTrendingRepositories()
@@ -52,5 +53,12 @@ extension TrendingViewController:UITableViewDataSource,UITableViewDelegate{
 //            fetchTrendingRepositories()
 //        }
 
+    }
+}
+
+extension TrendingViewController:EmptyStateViewDelegate{
+    func reloadButtonPressed() {
+        self.tableView.removeEmptyStateView()
+        trendingViewModel.fetchTrendingRepositories(tableView: self.tableView)
     }
 }
