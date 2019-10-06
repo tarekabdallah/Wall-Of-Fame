@@ -47,13 +47,6 @@ extension TrendingViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trendingViewModel.getTrendingRepoCount()
     }
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-//        guard let currentPage = tableView.indexPathsForVisibleRows?.last else{return}
-//        if currentPage.row == trendingViewModel.getTrendingRepoCount() - 10{
-//            fetchTrendingRepositories()
-//        }
-
-    }
 }
 
 extension TrendingViewController:EmptyStateViewDelegate{

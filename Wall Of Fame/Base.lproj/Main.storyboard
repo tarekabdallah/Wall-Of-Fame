@@ -62,5 +62,21 @@
             </objects>
             <point key="canvasLocation" x="44.927536231884062" y="-536.38392857142856"/>
         </scene>
+        <!--Trending Repositories-->
+        <scene sceneID="pAG-cg-1q1">
+            <objects>
+                <viewController id="qjl-Kc-ct9" customClass="TrendingViewController" customModule="Wall_Of_Fame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="02h-vE-1F0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="jgk-Ba-pRY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Trending Repositories" id="n7V-TE-MmQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vcU-8P-iSi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="138"/>
+        </scene>
     </scenes>
 </document>
