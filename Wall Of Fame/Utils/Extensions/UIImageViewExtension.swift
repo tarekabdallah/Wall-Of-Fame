@@ -19,7 +19,7 @@ extension UIImageView{
         }
         set(newValue){
             objc_setAssociatedObject(self, &circular, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-
+            
             if newValue{
                 layer.cornerRadius = frame.width/2
             }else{
@@ -29,7 +29,7 @@ extension UIImageView{
     }
     
     
-    func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+    func downloadedFrom(url: URL,tableView:UITableView? = nil, indexPath:IndexPath? = nil, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
         self.image = UIImage(named: "placeholder")
         let imageCache = NSCache<NSString, UIImage>()
@@ -45,15 +45,17 @@ extension UIImageView{
                     else { return }
                 DispatchQueue.main.async() { () -> Void in
                     imageCache.setObject(image, forKey: url.absoluteString as NSString)
-                    self.image = image
+                    if indexPath != nil && tableView?.cellForRow(at: indexPath!) != nil{
+                        self.image = image
+                    }
                 }
                 }.resume()
         }
     }
     
-    func downloadedFrom(link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+    func downloadedFrom(link: String,tableView:UITableView? = nil, indexPath:IndexPath? = nil, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
-        downloadedFrom(url: url, contentMode: mode)
+        downloadedFrom(url: url,tableView: tableView,indexPath: indexPath, contentMode: mode)
     }
     
     

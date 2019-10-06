@@ -40,7 +40,7 @@ extension TrendingViewController:UITableViewDataSource,UITableViewDelegate{
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GitRepositoryTableViewCell
         let repo = trendingViewModel.trendingGitRepositories[indexPath.row]
-        cell.setup(repo: repo)
+        cell.setup(repo: repo,tableView: tableView,indexPath: indexPath)
         cell.selectionStyle = .none
         return cell
     }

@@ -29,8 +29,8 @@ class GitRepositoryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setup(repo:GitRepositoryModel){
-        ownerAliasImageView.downloadedFrom(link: repo.owner.avatar)
+    func setup(repo:GitRepositoryModel,tableView:UITableView? = nil, indexPath:IndexPath? = nil){
+        ownerAliasImageView.downloadedFrom(link: repo.owner.avatar,tableView: tableView,indexPath: indexPath)
         repoNameLabel.text = repo.name
         repoDescriptionLabel.text = repo.description
         let formatter = NumberFormatter()
