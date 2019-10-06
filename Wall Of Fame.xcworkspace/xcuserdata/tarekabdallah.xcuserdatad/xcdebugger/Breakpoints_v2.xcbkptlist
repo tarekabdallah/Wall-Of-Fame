@@ -49,5 +49,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wall Of Fame/Service/WebService.swift"
+            timestampString = "592089588.4617471"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "requestFetchGitRepositories(page:success:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Wall_Of_Fame.WebService.requestFetchGitRepositories(page: Swift.Int, success: (Swift.Array&lt;Wall_Of_Fame.GitRepositoryModel&gt;) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Wall Of Fame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tarekabdallah/Documents/Wall%20Of%20Fame/Wall%20Of%20Fame/Service/WebService.swift"
+                  timestampString = "592089588.756142"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "2236">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Array&lt;Wall_Of_Fame.GitRepositoryModel&gt;&gt;) -&gt; () in Wall_Of_Fame.WebService.requestFetchGitRepositories(page: Swift.Int, success: (Swift.Array&lt;Wall_Of_Fame.GitRepositoryModel&gt;) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Wall Of Fame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tarekabdallah/Documents/Wall%20Of%20Fame/Wall%20Of%20Fame/Service/WebService.swift"
+                  timestampString = "592089588.758294"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -97,7 +97,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t2u-AC-dTR" secondAttribute="trailing" constant="16" id="s55-fl-nlV"/>
                             <constraint firstItem="t2u-AC-dTR" firstAttribute="leading" secondItem="4Fl-3P-so9" secondAttribute="trailing" constant="16" id="ttF-hZ-hze"/>
                             <constraint firstItem="t2u-AC-dTR" firstAttribute="top" secondItem="XVf-KI-DW1" secondAttribute="top" constant="8" id="uam-df-sEE"/>
-                            <constraint firstItem="Jee-qv-2aa" firstAttribute="leading" secondItem="RQw-P4-bOM" secondAttribute="trailing" constant="7.6666666666666572" id="wV9-2O-eHs"/>
+                            <constraint firstItem="Jee-qv-2aa" firstAttribute="leading" secondItem="RQw-P4-bOM" secondAttribute="trailing" constant="2" id="wV9-2O-eHs"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
