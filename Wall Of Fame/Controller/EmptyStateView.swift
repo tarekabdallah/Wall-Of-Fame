@@ -21,7 +21,7 @@ class EmptyStateView:UIView{
      }
      */
     @IBOutlet weak var detailsLabel: UILabel!
-    var delegate:EmptyStateViewDelegate?
+    weak var delegate:EmptyStateViewDelegate?
     class func instanceFromNib() -> EmptyStateView{
         return UINib(nibName: "EmptyStateView", bundle: .main).instantiate(withOwner: nil, options: nil)[0] as! EmptyStateView
     }
