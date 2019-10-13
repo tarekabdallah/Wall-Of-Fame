@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-extension UIView{
+extension UIView {
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -18,8 +18,7 @@ extension UIView{
             layer.masksToBounds = newValue > 0
         }
     }
-    
-    func dropShadow(scale: Bool = true, opacity:Float = 0.7, cornerRadius:Int = 10) {
+    func dropShadow(scale: Bool = true, opacity: Float = 0.7, cornerRadius: Int = 10) {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOpacity = opacity
@@ -27,72 +26,69 @@ extension UIView{
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
-    
-    func  presentPopup(view:UIView, duration:Double = 0.3){
+    func  presentPopup(view: UIView, duration: Double = 0.3) {
         view.transform = CGAffineTransform(scaleX: 0, y: 0)
         let backgroundView = UIView(frame: UIScreen.main.bounds)
         backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         backgroundView.viewWithTag(100)
-        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: backgroundView, action: #selector(backgroundView.dismissPopup(sender:duration:)))
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: backgroundView,
+                                                                       action: #selector(backgroundView.dismissPopup(sender:duration:)))
         backgroundView.addGestureRecognizer(tapGesture)
         backgroundView.addSubview(view)
         self.addSubview(backgroundView)
         UIView.animate(withDuration: duration, animations: {
             view.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }) { (finished:Bool) in
+        }) { finished in
         }
     }
-    func dismissPopup(){
-        var popupView:UIView!
-        for v in subviews{
-            if v.subviews.first?.tag == 1{
-                popupView = v.subviews.first!
+    func dismissPopup() {
+        var popupView: UIView!
+        for view in subviews {
+            if view.subviews.first?.tag == 1 {
+                popupView = view.subviews.first!
             }
         }
-        
         UIView.animate(withDuration: 0.3, animations: {
             popupView?.transform = CGAffineTransform(scaleX: 0, y: 0)
-        }) { (finished:Bool) in
+        }) { finished in
             popupView?.transform = CGAffineTransform.identity
             self.superview?.removeFromSuperview()
             self.removeFromSuperview()
         }
     }
-    func pressInView(sender: UITapGestureRecognizer) -> Bool{
-        if (sender.state == UIGestureRecognizer.State.ended) {
+    func pressInView(sender: UITapGestureRecognizer) -> Bool {
+        if sender.state == UIGestureRecognizer.State.ended {
             let location: CGPoint = sender.location(in: self)
-            
-            if (!self.point(inside: location, with: nil)) {
+            if !self.point(inside: location, with: nil) {
                 return false
-            }else{
+            } else {
                 return true
             }
         }
         return true
     }
-    
-    @objc func dismissPopup(sender: UITapGestureRecognizer, duration:Double = 0.3){
-        var popupView:UIView!
-        for v in subviews{
-            if v.subviews.first?.tag == 1{
-                popupView = v.subviews.first!
+    @objc func dismissPopup(sender: UITapGestureRecognizer, duration: Double = 0.3) {
+        var popupView: UIView!
+        for view in subviews {
+            if view.subviews.first?.tag == 1 {
+                popupView = view.subviews.first!
             }
         }
-        if popupView?.pressInView(sender: sender) ?? false{
+        if popupView?.pressInView(sender: sender) ?? false {
             return
         }
         self.removeGestureRecognizer(sender)
         UIView.animate(withDuration: duration, animations: {
             popupView?.transform = CGAffineTransform(scaleX: 0, y: 0)
-        }) { (finished:Bool) in
+        }) { finished in
             popupView?.transform = CGAffineTransform.identity
             self.removeFromSuperview()
         }
     }
-    static func showErrorDialog(title:String, details:String, retry:@escaping () -> Void){
-        if let displayView = UIApplication.shared.keyWindow?.rootViewController?.view{
-            for view in displayView.subviews{
-                if view is AlertView{
+    static func showErrorDialog(title: String, details: String, retry: @escaping () -> Void) {
+        if let displayView = UIApplication.shared.keyWindow?.rootViewController?.view {
+            for view in displayView.subviews {
+                if view is AlertView {
                     return
                 }
             }

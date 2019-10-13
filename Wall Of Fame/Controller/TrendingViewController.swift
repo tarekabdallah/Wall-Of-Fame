@@ -7,12 +7,11 @@
 //
 
 import UIKit
-
 class TrendingViewController: UIViewController {
 
-    @IBOutlet weak var tableView:DefaultTableView!
+    @IBOutlet weak var tableView: DefaultTableView!
 
-    var trendingViewModel:TrendingViewModel = TrendingViewModel(webService: WebService.shared)
+    var trendingViewModel: TrendingViewModel = TrendingViewModel(webService: WebService.shared)
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -21,26 +20,27 @@ class TrendingViewController: UIViewController {
         tableView.register(UINib(nibName: "GitRepositoryTableViewCell", bundle: .main), forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
         tableView.emptyStateDelegate = self
-        // Do any additional setup after loading the view.
-        
         fetchTrendingRepositories()
     }
-    func fetchTrendingRepositories(){
+    func fetchTrendingRepositories() {
         self.tableView.startLoader()
         trendingViewModel.fetchTrendingRepositories(tableView: self.tableView)
     }
 
 }
 
-extension TrendingViewController:UITableViewDataSource,UITableViewDelegate{
+extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == trendingViewModel.getTrendingRepoCount() - 1{
+        if indexPath.row == trendingViewModel.getTrendingRepoCount() - 1 {
             fetchTrendingRepositories()
         }
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GitRepositoryTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell",
+                                                       for: indexPath) as? GitRepositoryTableViewCell else {
+            return UITableViewCell()
+        }
         let repo = trendingViewModel.trendingGitRepositories[indexPath.row]
-        cell.setup(repo: repo,tableView: tableView,indexPath: indexPath)
+        cell.setup(repo: repo, tableView: tableView, indexPath: indexPath)
         cell.selectionStyle = .none
         return cell
     }
@@ -49,7 +49,7 @@ extension TrendingViewController:UITableViewDataSource,UITableViewDelegate{
     }
 }
 
-extension TrendingViewController:EmptyStateViewDelegate{
+extension TrendingViewController: EmptyStateViewDelegate {
     func reloadButtonPressed() {
         self.tableView.removeEmptyStateView()
         trendingViewModel.fetchTrendingRepositories(tableView: self.tableView)

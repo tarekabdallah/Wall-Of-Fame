@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "121D6E6B-CA0D-4EFA-9A32-56C0F0DD509A"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "394CF277-51F4-40D2-9B7E-ED1DEE82FFA0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -22,6 +24,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
          <BreakpointContent
+            uuid = "07639A8B-67F7-4C1C-8851-E440F4654794"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No">
@@ -30,6 +33,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
+            uuid = "6469F99D-A5BF-4DAB-BECB-B79ECCF2B055"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -40,60 +44,13 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
          <BreakpointContent
+            uuid = "CBBE1594-D8F6-49B9-8053-E5F6CF01D842"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             symbolName = "The operation couldn&#x2019;t be completed. ObjectMapper failed to serialize response."
             moduleName = "">
             <Locations>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wall Of Fame/Service/WebService.swift"
-            timestampString = "592091121.392239"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "requestFetchGitRepositories(page:success:failure:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wall_Of_Fame.WebService.requestFetchGitRepositories(page: Swift.Int, success: (Swift.Array&lt;Wall_Of_Fame.GitRepositoryModel&gt;) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Wall Of Fame"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tarekabdallah/Documents/Wall%20Of%20Fame/Wall%20Of%20Fame/Service/WebService.swift"
-                  timestampString = "592089588.756142"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "2236">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Array&lt;Wall_Of_Fame.GitRepositoryModel&gt;&gt;) -&gt; () in Wall_Of_Fame.WebService.requestFetchGitRepositories(page: Swift.Int, success: (Swift.Array&lt;Wall_Of_Fame.GitRepositoryModel&gt;) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Wall Of Fame"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tarekabdallah/Documents/Wall%20Of%20Fame/Wall%20Of%20Fame/Service/WebService.swift"
-                  timestampString = "592089588.758294"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "160">
-               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

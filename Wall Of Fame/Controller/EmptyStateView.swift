@@ -8,30 +8,20 @@
 
 import Foundation
 import UIKit
-protocol EmptyStateViewDelegate{
+protocol EmptyStateViewDelegate: class {
     func reloadButtonPressed()
 }
-class EmptyStateView:UIView{
-    
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
+class EmptyStateView: UIView {
     @IBOutlet weak var detailsLabel: UILabel!
-    weak var delegate:EmptyStateViewDelegate?
-    class func instanceFromNib() -> EmptyStateView{
-        return UINib(nibName: "EmptyStateView", bundle: .main).instantiate(withOwner: nil, options: nil)[0] as! EmptyStateView
+    weak var delegate: EmptyStateViewDelegate?
+    class func instanceFromNib() -> EmptyStateView {
+        return UINib(nibName: "EmptyStateView",
+                     bundle: .main).instantiate(withOwner: nil, options: nil)[0] as? EmptyStateView ?? EmptyStateView()
     }
-    
-    func setup(details:String){
+    func setup(details: String) {
         detailsLabel.text = details
     }
-
-    
-    @IBAction func didPressReload(_ sender: Any){
+    @IBAction func didPressReload(_ sender: Any) {
         delegate?.reloadButtonPressed()
-    }    
+    }
 }

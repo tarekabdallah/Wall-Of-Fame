@@ -6,6 +6,8 @@ def standard_pods
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
   pod 'OHHTTPStubs/Swift'
+  pod 'SwiftLint'
+
 end
 
 target 'Wall Of Fame' do

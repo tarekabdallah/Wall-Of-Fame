@@ -7,9 +7,7 @@
 //
 
 import UIKit
-
 class GitRepositoryTableViewCell: UITableViewCell {
-
     @IBOutlet weak var ownerAliasImageView: UIImageView!
     @IBOutlet weak var ownerNameLabel: UILabel!
     @IBOutlet weak var repoNameLabel: UILabel!
@@ -17,7 +15,6 @@ class GitRepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var backgroundCardView: UIView!
     @IBOutlet weak var starsImageView: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,18 +26,20 @@ class GitRepositoryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setup(repo:GitRepositoryModel,tableView:UITableView? = nil, indexPath:IndexPath? = nil){
-        ownerAliasImageView.downloadedFrom(link: repo.owner.avatar,tableView: tableView,indexPath: indexPath)
+    func setup(repo: GitRepositoryModel,
+               tableView: UITableView? = nil,
+               indexPath: IndexPath? = nil) {
+        ownerAliasImageView.downloadedFrom(link: repo.owner.avatar,
+                                           tableView: tableView,
+                                           indexPath: indexPath)
         repoNameLabel.text = repo.name
         repoDescriptionLabel.text = repo.description
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        
         formatter.locale = Locale(identifier: "en_US")
         starsLabel.text = formatter.string(from: NSNumber(value: repo.stars ?? 0))!
         ownerNameLabel.text = repo.owner.name
         starsImageView.tintColor = UIColor(red: 246/255, green: 198/255, blue: 40/255, alpha: 1)
         starsImageView.image = UIImage(named: "star")?.withRenderingMode(.alwaysTemplate)
     }
-    
 }

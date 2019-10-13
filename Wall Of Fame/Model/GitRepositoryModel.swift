@@ -8,17 +8,14 @@
 
 import Foundation
 import ObjectMapper
-class GitRepositoryModel:Mappable{
-    
-    var name:String!
-    var description:String!
-    var url:String!
-    var stars:Int!
-    var owner:OwnerModel!
-    
+class GitRepositoryModel: Mappable {
+    var name: String!
+    var description: String!
+    var url: String!
+    var stars: Int!
+    var owner: OwnerModel!
     required init?(map: Map) {
     }
-
     func mapping(map: Map) {
         name        <- map["name"]
         description <- map["description"]
@@ -27,14 +24,15 @@ class GitRepositoryModel:Mappable{
         owner       <- map["owner"]
 
     }
-
-    init(name:String, description:String, url:String, stars:Int, owner:OwnerModel) {
+    init(name: String,
+         description: String,
+         url: String,
+         stars: Int,
+         owner: OwnerModel) {
         self.name = name
         self.description = description
         self.url = url
         self.stars = stars
         self.owner = owner
     }
-
-    
 }

@@ -19,29 +19,30 @@ class DefaultTableView: UITableView {
     */
     private var loadingView: UIView!
     private var indicator: UIActivityIndicatorView!
-    @IBInspectable var emptyStateText:String = ""
-    var emptyStateDelegate:EmptyStateViewDelegate?
+    @IBInspectable var emptyStateText: String = ""
+    weak var emptyStateDelegate: EmptyStateViewDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    func startLoader(){
+    func startLoader() {
         self.createLoadingView()
         self.indicator.startAnimating()
 
     }
-    func stopLoader(){
+    func stopLoader() {
         self.indicator.stopAnimating()
         self.tableFooterView = nil
-        if self.numberOfRows(inSection: 0) == 0{
+        if self.numberOfRows(inSection: 0) == 0 {
             self.showEmptyState(WithDetails: emptyStateText)
-        }
-        else{
+        } else {
             self.removeEmptyStateView()
         }
     }
     private func createLoadingView() {
-        
-        loadingView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        loadingView = UIView(frame: CGRect(x: 0,
+                                           y: 0,
+                                           width: UIScreen.main.bounds.width,
+                                           height: 50))
         indicator = UIActivityIndicatorView()
         indicator.color = UIColor.lightGray
         indicator.translatesAutoresizingMaskIntoConstraints = false
@@ -56,38 +57,33 @@ class DefaultTableView: UITableView {
             toItem: indicator, attribute: .centerX, multiplier: 1, constant: 0
         )
         loadingView.addConstraint(xCenterConstraint)
-        
         let yCenterConstraint = NSLayoutConstraint(
             item: loadingView!, attribute: .centerY, relatedBy: .equal,
             toItem: indicator, attribute: .centerY, multiplier: 1, constant: 0
         )
         loadingView.addConstraint(yCenterConstraint)
     }
-    
-    func showEmptyState(WithDetails details:String){
-        for view in subviews{
-            if view is EmptyStateView{
+    func showEmptyState(WithDetails details: String) {
+        for view in subviews {
+            if view is EmptyStateView {
                 return
             }
         }
 
-        let emptyStateView:EmptyStateView = EmptyStateView.instanceFromNib()
+        let emptyStateView: EmptyStateView = EmptyStateView.instanceFromNib()
         emptyStateView.frame = self.bounds
         emptyStateView.delegate = emptyStateDelegate
         emptyStateView.setup(details: details)
         self.addSubview(emptyStateView)
         self.isScrollEnabled = false
     }
-    
-    func removeEmptyStateView(){
-        for view in subviews{
-            if view is EmptyStateView{
+    func removeEmptyStateView() {
+        for view in subviews {
+            if view is EmptyStateView {
                 view.removeFromSuperview()
                 self.isScrollEnabled = true
                 return
             }
         }
     }
-    
-
 }
