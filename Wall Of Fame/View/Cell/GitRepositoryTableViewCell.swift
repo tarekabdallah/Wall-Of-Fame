@@ -19,17 +19,16 @@ class GitRepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var backgroundCardView: UIView!
     @IBOutlet weak var starsImageView: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         backgroundCardView.dropShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+
     func setup(repo: GitRepositoryModel) {
         repoNameLabel.text = repo.name
         repoDescriptionLabel.text = repo.description

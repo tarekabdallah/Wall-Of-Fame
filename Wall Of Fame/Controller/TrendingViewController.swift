@@ -7,10 +7,11 @@
 //
 
 import UIKit
+
 class TrendingViewController: UIViewController {
     @IBOutlet weak var tableView: DefaultTableView!
-
     var trendingViewModel: TrendingViewModel = TrendingViewModel(webService: WebService.shared)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -23,12 +24,15 @@ class TrendingViewController: UIViewController {
         tableView.emptyStateDelegate = self
         fetchTrendingRepositories()
     }
+
     func fetchTrendingRepositories() {
         self.tableView.startLoader()
         trendingViewModel.fetchTrendingRepositories(tableView: self.tableView)
     }
 }
+
 extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == trendingViewModel.getTrendingRepoCount() - 1 {
             fetchTrendingRepositories()
@@ -46,11 +50,13 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         return cell
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trendingViewModel.getTrendingRepoCount()
     }
 }
 extension TrendingViewController: EmptyStateViewDelegate {
+    
     func reloadButtonPressed() {
         self.tableView.removeEmptyStateView()
         trendingViewModel.fetchTrendingRepositories(tableView: self.tableView)

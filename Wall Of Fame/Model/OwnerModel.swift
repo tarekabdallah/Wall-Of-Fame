@@ -7,11 +7,13 @@
 //
 
 import Foundation
+
 class OwnerModel: Codable {
     var name: String!
     var id: Int!
     var avatar: String!
     var accountUrl: String!
+
     init(name: String,
          id: Int,
          avatar: String,
@@ -21,6 +23,7 @@ class OwnerModel: Codable {
         self.avatar = avatar
         self.accountUrl = accountURL
     }
+
     enum CodingKeys: String, CodingKey {
         case name = "login"
         case avatar = "avatarUrl"

@@ -29,6 +29,7 @@ extension UIImageView {
             }
         }
     }
+
     func downloadedFrom(url: URL,
                         tableView: UITableView? = nil,
                         indexPath: IndexPath? = nil,
@@ -57,6 +58,7 @@ extension UIImageView {
                 }.resume()
         }
     }
+
     func downloadedFrom(link: String,
                         tableView: UITableView? = nil,
                         indexPath: IndexPath? = nil,

@@ -20,6 +20,7 @@ class GitRepositoryModel: Codable {
         case stars = "stargazersCount"
         case url = "htmlUrl"
     }
+
     init(name: String,
          description: String,
          url: String,

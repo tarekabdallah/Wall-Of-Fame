@@ -7,10 +7,11 @@
 //
 
 import Foundation
-import Alamofire
+import UIKit
 enum TrendingViewModelStrings: String {
     case serverFailedTitle = "Couldn't fetch repositories."
 }
+
 class TrendingViewModel {
     private(set) var webService: WebService!
     var trendingGitRepositories: [GitRepositoryModel] = [GitRepositoryModel]()
@@ -19,31 +20,40 @@ class TrendingViewModel {
         self.webService = webService
     }
 }
+
 extension TrendingViewModel {
     func getRepoName(index: Int) -> String {
         return trendingGitRepositories[index].name
     }
+
     func getRepoDescription(index: Int) -> String {
         return trendingGitRepositories[index].description
     }
+
     func getRepoURL(index: Int) -> String {
         return trendingGitRepositories[index].url
     }
+
     func getRepoStars(index: Int) -> Int {
         return trendingGitRepositories[index].stars
     }
+
     func getRepoOwnerName(index: Int) -> String {
         return trendingGitRepositories[index].owner.name
     }
+
     func getRepoOwnerAvatarURL(index: Int) -> String {
         return trendingGitRepositories[index].owner?.avatar ?? ""
     }
+
     func getRepoOwnerAccountURL(index: Int) -> URL {
         return URL(string: trendingGitRepositories[index].owner.accountUrl)!
     }
+
     func getTrendingRepoCount() -> Int {
         return trendingGitRepositories.count
     }
+
     func fetchTrendingRepositories(tableView: DefaultTableView? = nil,
                                    completed:((_ success: Bool, _ message: String? ) -> Void)? = nil) {
         tableView?.startLoader()

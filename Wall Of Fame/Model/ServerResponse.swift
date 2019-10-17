@@ -7,15 +7,18 @@
 //
 
 import Foundation
+
 class ServerRsponse: Decodable {
     var totalCount: Int!
     var incompleteResults: Bool!
     var gitRepositories: [GitRepositoryModel]!
+
     enum CodingKeys: String, CodingKey {
         case gitRepositories = "items"
         case totalCount
         case incompleteResults
     }
+
     required public init(from decoder: Decoder) throws {
         do {
             let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -26,5 +29,4 @@ class ServerRsponse: Decodable {
             assertionFailure("ERROR: \(error)")
         }
     }
-
 }

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 enum WebServiceConstants: String {
     case serverURL = "https://api.github.com/search/repositories"
     case message = "message"
@@ -55,8 +54,8 @@ class WebService {
 
         let request = URLRequest(url: url)
 
-        let task = URLSession.shared.dataTask(with: request) { (responseData, response, error) in
-            guard error == nil else{
+        let task = URLSession.shared.dataTask(with: request) { (responseData, _, error) in
+            guard error == nil else {
                 let json = try? JSONSerialization.jsonObject(with: responseData ?? Data(),
                                                              options: JSONSerialization
                                                                 .ReadingOptions

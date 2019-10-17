@@ -17,13 +17,16 @@ protocol EmptyStateViewDelegate: class {
 class EmptyStateView: UIView {
     @IBOutlet weak var detailsLabel: UILabel!
     weak var delegate: EmptyStateViewDelegate?
+
     class func instanceFromNib() -> EmptyStateView {
         return UINib(nibName: EmptyStateViewStrings.nibName.rawValue,
                      bundle: .main).instantiate(withOwner: nil, options: nil)[0] as? EmptyStateView ?? EmptyStateView()
     }
+
     func setup(details: String) {
         detailsLabel.text = details
     }
+
     @IBAction func didPressReload(_ sender: Any) {
         delegate?.reloadButtonPressed()
     }

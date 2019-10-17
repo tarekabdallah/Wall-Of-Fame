@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		18DA001B479C2BE2C7DCB989 /* Pods_Wall_Of_FameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A5BBBF5B74E30522430E12 /* Pods_Wall_Of_FameTests.framework */; };
-		4809AB632C440503CC622BE0 /* Pods_Wall_Of_Fame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2FE4EFFFB4BFBDC1F7AE4 /* Pods_Wall_Of_Fame.framework */; };
 		9015B6BA2346525100413BD3 /* Sucess.json in Resources */ = {isa = PBXBuildFile; fileRef = 90BD3757234628CD00BA843A /* Sucess.json */; };
 		9015B6BB2346525100413BD3 /* Failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 90DA8179234631AD00A0F51D /* Failure.json */; };
 		9015B6BD23478A0E00413BD3 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9015B6BC23478A0E00413BD3 /* AlertView.xib */; };
 		9015B6BF23478A2000413BD3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015B6BE23478A2000413BD3 /* AlertView.swift */; };
+		9049D346235897F300F93206 /* Pods_Wall_Of_FameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9049D345235897F300F93206 /* Pods_Wall_Of_FameTests.framework */; };
+		9049D347235897F300F93206 /* Pods_Wall_Of_FameTests.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9049D345235897F300F93206 /* Pods_Wall_Of_FameTests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		906ECA132346383F00323C6F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909387C2233AA92400732E73 /* WebService.swift */; };
 		906ECA142346383F00323C6F /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909387C4233AA97E00732E73 /* TrendingViewModel.swift */; };
 		906ECA152346383F00323C6F /* GitRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909387BD233AA15D00732E73 /* GitRepositoryModel.swift */; };
@@ -27,7 +28,7 @@
 		90938792233A9FDF00732E73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90938790233A9FDF00732E73 /* Main.storyboard */; };
 		90938794233A9FE100732E73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90938793233A9FE100732E73 /* Assets.xcassets */; };
 		90938797233A9FE100732E73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90938795233A9FE100732E73 /* LaunchScreen.storyboard */; };
-		909387A2233A9FE100732E73 /* Wall_Of_FameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909387A1233A9FE100732E73 /* Wall_Of_FameTests.swift */; };
+		909387A2233A9FE100732E73 /* WallOfFameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909387A1233A9FE100732E73 /* WallOfFameTests.swift */; };
 		909387BE233AA15D00732E73 /* GitRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909387BD233AA15D00732E73 /* GitRepositoryModel.swift */; };
 		909387C0233AA68400732E73 /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909387BF233AA68400732E73 /* OwnerModel.swift */; };
 		909387C3233AA92400732E73 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909387C2233AA92400732E73 /* WebService.swift */; };
@@ -49,6 +50,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9049D348235897F300F93206 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9049D347235897F300F93206 /* Pods_Wall_Of_FameTests.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		01B2FE4EFFFB4BFBDC1F7AE4 /* Pods_Wall_Of_Fame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wall_Of_Fame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15FF6484F86997436ECFA8DE /* Pods-Wall Of FameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall Of FameTests.release.xcconfig"; path = "Target Support Files/Pods-Wall Of FameTests/Pods-Wall Of FameTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +73,7 @@
 		87C050D60F991297C6FF240A /* Pods-Wall Of FameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall Of FameTests.debug.xcconfig"; path = "Target Support Files/Pods-Wall Of FameTests/Pods-Wall Of FameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9015B6BC23478A0E00413BD3 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		9015B6BE23478A2000413BD3 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		9049D345235897F300F93206 /* Pods_Wall_Of_FameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Wall_Of_FameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90836F1C23428884000E7B35 /* GitRepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		90836F1D23428884000E7B35 /* GitRepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitRepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		90836F2423428F10000E7B35 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
@@ -71,7 +87,7 @@
 		90938796233A9FE100732E73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90938798233A9FE100732E73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9093879D233A9FE100732E73 /* Wall Of FameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wall Of FameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		909387A1233A9FE100732E73 /* Wall_Of_FameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall_Of_FameTests.swift; sourceTree = "<group>"; };
+		909387A1233A9FE100732E73 /* WallOfFameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallOfFameTests.swift; sourceTree = "<group>"; };
 		909387A3233A9FE100732E73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		909387BD233AA15D00732E73 /* GitRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryModel.swift; sourceTree = "<group>"; };
 		909387BF233AA68400732E73 /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
@@ -92,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4809AB632C440503CC622BE0 /* Pods_Wall_Of_Fame.framework in Frameworks */,
+				9049D346235897F300F93206 /* Pods_Wall_Of_FameTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				90BD37562346289000BA843A /* MockJsonResponses */,
-				909387A1233A9FE100732E73 /* Wall_Of_FameTests.swift */,
+				909387A1233A9FE100732E73 /* WallOfFameTests.swift */,
 				909387A3233A9FE100732E73 /* Info.plist */,
 			);
 			path = "Wall Of FameTests";
@@ -253,6 +269,7 @@
 		97E06532207E9D24DC54F0A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9049D345235897F300F93206 /* Pods_Wall_Of_FameTests.framework */,
 				01B2FE4EFFFB4BFBDC1F7AE4 /* Pods_Wall_Of_Fame.framework */,
 				A6A5BBBF5B74E30522430E12 /* Pods_Wall_Of_FameTests.framework */,
 				3F47A50D05E188C0D1F7F2A7 /* Pods_Wall_Of_FameUITests.framework */,
@@ -272,6 +289,7 @@
 				90938786233A9FDF00732E73 /* Frameworks */,
 				90938787233A9FDF00732E73 /* Resources */,
 				795D587AEC1B32DFA09FA6BC /* [CP] Embed Pods Frameworks */,
+				9049D348235897F300F93206 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -486,7 +504,7 @@
 				906ECA142346383F00323C6F /* TrendingViewModel.swift in Sources */,
 				906ECA152346383F00323C6F /* GitRepositoryModel.swift in Sources */,
 				906ECA162346383F00323C6F /* OwnerModel.swift in Sources */,
-				909387A2233A9FE100732E73 /* Wall_Of_FameTests.swift in Sources */,
+				909387A2233A9FE100732E73 /* WallOfFameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

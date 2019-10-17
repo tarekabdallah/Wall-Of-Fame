@@ -18,6 +18,7 @@ extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
+
     func dropShadow(scale: Bool = true, opacity: Float = 0.7, cornerRadius: Int = 10) {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.gray.cgColor
@@ -26,13 +27,14 @@ extension UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
+
     func  presentPopup(view: UIView, duration: Double = 0.3) {
         view.transform = CGAffineTransform(scaleX: 0, y: 0)
         let backgroundView = UIView(frame: UIScreen.main.bounds)
         backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         backgroundView.viewWithTag(100)
         let tapGesture = UITapGestureRecognizer(target: backgroundView,
-                                                                       action: #selector(backgroundView.dismissPopup(sender:duration:)))
+                                                action: #selector(backgroundView.dismissPopup(sender:duration:)))
         backgroundView.addGestureRecognizer(tapGesture)
         backgroundView.addSubview(view)
         self.addSubview(backgroundView)
