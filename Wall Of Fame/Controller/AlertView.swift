@@ -1,8 +1,8 @@
 //
-//  AlertView.swift
-//  Soffa
+//  AlertViewStrings.swift
+//  Wall Of Fame
 //
-//  Created by Tarek Abdallah on 14/8/19.
+//  Created by Tarek Abdallah on 24/9/19.
 //  Copyright © 2019 Tarek. All rights reserved.
 //
 
