@@ -25,3 +25,4 @@ This is a simple app that retrieves the top stared repos on github created the l
 
 ## Libraries:
 - OHHTTPStubs/Swift: Used to Stub the network calls in test to give the option to choose the response tests (200,404 ...) without using the real network.
+- Swiftlint: Used to enforce Swift style and conventions.
