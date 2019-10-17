@@ -14,6 +14,7 @@ import OHHTTPStubs
 class WallOfFameTests: XCTestCase {
     var trendingViewModel: TrendingViewModel!
     let tableView = UITableView()
+
     override func setUp() {
         trendingViewModel = TrendingViewModel(webService: WebService.shared)
     }
@@ -57,6 +58,7 @@ class WallOfFameTests: XCTestCase {
 
         }
     }
+
     func test404Failure() {
         OHHTTPStubs.removeAllStubs()
         stub(condition: isHost("api.github.com")&&isPath("/search/repositories")) { _  in
@@ -73,6 +75,7 @@ class WallOfFameTests: XCTestCase {
             XCTAssertTrue(self.trendingViewModel.getTrendingRepoCount() == 0)
         }
     }
+
     func testNoNetwork() {
         OHHTTPStubs.removeAllStubs()
         stub(condition: isHost("api.github.com")&&isPath("/search/repositories")) { _  in
@@ -91,6 +94,7 @@ class WallOfFameTests: XCTestCase {
         }
 
     }
+    
     func testFailure() {
         OHHTTPStubs.removeAllStubs()
         stub(condition: isHost("api.github.com")&&isPath("/search/repositories")) { _  in

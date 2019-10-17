@@ -8,30 +8,31 @@
 
 import Foundation
 
-enum WebServiceConstants: String {
-    case serverURL = "https://api.github.com/search/repositories"
-    case message = "message"
-    case items = "items"
-}
-
-enum WebServiceParametersString: String {
-    case query = "q"
-    case sort = "sort"
-    case order = "order"
-    case page = "page"
-}
-
-enum GitServerOrderingString: String {
-    case ascending = "asc"
-    case descending = "desc"
-}
-
-enum GitServerItemsString: String {
-    case star
-}
 
 class WebService {
     static let shared = WebService()
+
+    enum WebServiceConstants: String {
+        case serverURL = "https://api.github.com/search/repositories"
+        case message = "message"
+        case items = "items"
+    }
+
+    enum WebServiceParametersString: String {
+        case query = "q"
+        case sort = "sort"
+        case order = "order"
+        case page = "page"
+    }
+
+    enum GitServerOrderingString: String {
+        case ascending = "asc"
+        case descending = "desc"
+    }
+
+    enum GitServerItemsString: String {
+        case star
+    }
 
     func requestFetchGitRepositories(page: Int,
                                      success: @escaping (_ repositories: [GitRepositoryModel]) -> Void,

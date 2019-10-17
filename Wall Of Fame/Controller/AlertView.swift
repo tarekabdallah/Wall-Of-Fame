@@ -24,16 +24,16 @@ class AlertView: UIView {
             .instantiate(withOwner: nil, options: nil)[0] as? AlertView ?? AlertView()
     }
 
+    func dialog(withTitle title: String, andMessage message: String) {
+        titlelabel.text = title
+        detailsLabel.text = message
+    }
+
     @IBAction func dismissPressed(_ sender: Any) {
         self.dismissPopup()
     }
 
     @IBAction func retryButtonPressed(_ sender: Any) {
         didRetry()
-    }
-
-    func dialog(withTitle title: String, andMessage message: String) {
-        titlelabel.text = title
-        detailsLabel.text = message
     }
 }

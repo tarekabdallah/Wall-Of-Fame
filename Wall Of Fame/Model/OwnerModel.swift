@@ -14,6 +14,13 @@ class OwnerModel: Codable {
     var avatar: String!
     var accountUrl: String!
 
+    enum CodingKeys: String, CodingKey {
+        case name = "login"
+        case avatar = "avatarUrl"
+        case accountUrl = "htmlUrl"
+        case id
+    }
+
     init(name: String,
          id: Int,
          avatar: String,
@@ -22,12 +29,5 @@ class OwnerModel: Codable {
         self.id = id
         self.avatar = avatar
         self.accountUrl = accountURL
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case name = "login"
-        case avatar = "avatarUrl"
-        case accountUrl = "htmlUrl"
-        case id
     }
 }
