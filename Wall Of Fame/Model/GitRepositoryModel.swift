@@ -7,12 +7,14 @@
 //
 
 import Foundation
+
 class GitRepositoryModel: Codable {
     var name: String!
     var description: String!
     var url: String!
     var stars: Int!
     var owner: OwnerModel!
+    
     enum CodingKeys: String, CodingKey {
         case name
         case description

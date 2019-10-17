@@ -7,9 +7,11 @@
 //
 
 import UIKit
+
 enum AlertViewStrings: String {
     case nibName = "AlertView"
 }
+
 class AlertView: UIView {
     var didRetry:(() -> Void)!
     @IBOutlet weak var titlelabel: UILabel!

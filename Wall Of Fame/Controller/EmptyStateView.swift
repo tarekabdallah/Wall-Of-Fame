@@ -8,12 +8,15 @@
 
 import Foundation
 import UIKit
+
 enum EmptyStateViewStrings: String {
     case nibName = "EmptyStateView"
 }
+
 protocol EmptyStateViewDelegate: class {
     func reloadButtonPressed()
 }
+
 class EmptyStateView: UIView {
     @IBOutlet weak var detailsLabel: UILabel!
     weak var delegate: EmptyStateViewDelegate?

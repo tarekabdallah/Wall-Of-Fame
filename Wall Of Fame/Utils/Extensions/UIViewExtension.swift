@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 extension UIView {
     @IBInspectable var cornerRadius: CGFloat {
         get {
@@ -43,6 +44,7 @@ extension UIView {
         }) { finished in
         }
     }
+
     func dismissPopup() {
         var popupView: UIView!
         for view in subviews {
@@ -58,6 +60,7 @@ extension UIView {
             self.removeFromSuperview()
         }
     }
+
     func pressInView(sender: UITapGestureRecognizer) -> Bool {
         if sender.state == UIGestureRecognizer.State.ended {
             let location: CGPoint = sender.location(in: self)
@@ -69,6 +72,7 @@ extension UIView {
         }
         return true
     }
+
     @objc func dismissPopup(sender: UITapGestureRecognizer, duration: Double = 0.3) {
         var popupView: UIView!
         for view in subviews {
@@ -87,6 +91,7 @@ extension UIView {
             self.removeFromSuperview()
         }
     }
+    
     static func showErrorDialog(title: String, details: String, retry: @escaping () -> Void) {
         if let displayView = UIApplication.shared.keyWindow?.rootViewController?.view {
             for view in displayView.subviews {

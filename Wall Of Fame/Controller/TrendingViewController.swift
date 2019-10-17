@@ -55,6 +55,7 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
         return trendingViewModel.getTrendingRepoCount()
     }
 }
+
 extension TrendingViewController: EmptyStateViewDelegate {
     
     func reloadButtonPressed() {

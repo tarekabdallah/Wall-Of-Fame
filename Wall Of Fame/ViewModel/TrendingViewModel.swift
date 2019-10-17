@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 enum TrendingViewModelStrings: String {
     case serverFailedTitle = "Couldn't fetch repositories."
 }

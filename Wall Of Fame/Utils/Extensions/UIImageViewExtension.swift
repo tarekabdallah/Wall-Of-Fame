@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 private var circular: Bool = false
 extension UIImageView {
     @IBInspectable var isCircular: Bool {
