@@ -31,7 +31,7 @@ extension UIView {
         let backgroundView = UIView(frame: UIScreen.main.bounds)
         backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         backgroundView.viewWithTag(100)
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: backgroundView,
+        let tapGesture = UITapGestureRecognizer(target: backgroundView,
                                                                        action: #selector(backgroundView.dismissPopup(sender:duration:)))
         backgroundView.addGestureRecognizer(tapGesture)
         backgroundView.addSubview(view)

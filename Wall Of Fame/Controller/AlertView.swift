@@ -23,7 +23,6 @@ class AlertView: UIView {
     @IBAction func dismissPressed(_ sender: Any) {
         self.dismissPopup()
     }
-
     @IBAction func retryButtonPressed(_ sender: Any) {
         didRetry()
     }

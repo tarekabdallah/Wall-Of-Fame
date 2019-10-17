@@ -24,7 +24,6 @@ class ServerRsponse: Decodable {
             incompleteResults = try container.decode(Bool.self, forKey: .incompleteResults)
         } catch {
             assertionFailure("ERROR: \(error)")
-            // TODO: automatically send a report about a corrupted data
         }
     }
 

@@ -60,7 +60,9 @@ extension TrendingViewModel {
             completed?(true, nil)
         }) { (message) in
             tableView?.stopLoader()
-            UIView.showErrorDialog(title: TrendingViewModelStrings.serverFailedTitle.rawValue, details: message, retry: {
+            UIView.showErrorDialog(title: TrendingViewModelStrings.serverFailedTitle.rawValue,
+                                   details: message,
+                                   retry: {
                 self.fetchTrendingRepositories(tableView: tableView, completed: completed)
             })
             completed?(false, message)

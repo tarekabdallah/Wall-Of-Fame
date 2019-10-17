@@ -8,13 +8,12 @@
 
 import Foundation
 import Alamofire
-import AlamofireObjectMapper
-enum WebServiceConstants:String{
+enum WebServiceConstants: String {
     case serverURL = "https://api.github.com/search/repositories"
     case message = "message"
     case items = "items"
 }
-enum WebServiceParametersString:String{
+enum WebServiceParametersString: String {
     case query = "q"
     case sort = "sort"
     case order = "order"
@@ -25,7 +24,7 @@ enum GitServerOrderingString: String {
     case descending = "desc"
 }
 enum GitServerItemsString: String {
-    case star = "star"
+    case star
 }
 
 class WebService {
@@ -33,16 +32,16 @@ class WebService {
     func requestFetchGitRepositories(page: Int,
                                      success: @escaping (_ repositories: [GitRepositoryModel]) -> Void,
                                      failure: @escaping (_ message: String) -> Void) {
-        
         var dateComponent = DateComponents()
         dateComponent.day = -30
         let date = Calendar.current.date(byAdding: dateComponent, to: Date())!
         let dateFormatter = DateFormatter()
         dateFormatter.isLenient = true
         dateFormatter.dateFormat  = "yyyy-MM-dd"
-        
         Alamofire.request(WebServiceConstants.serverURL.rawValue,
-                          parameters: [WebServiceParametersString.query.rawValue: "created:>\(dateFormatter.string(from: date))",
+                          parameters: [WebServiceParametersString
+                            .query
+                            .rawValue: "created:>\(dateFormatter.string(from: date))",
                             WebServiceParametersString.sort.rawValue: GitServerItemsString.star.rawValue,
                             WebServiceParametersString.order.rawValue: GitServerOrderingString.descending.rawValue,
                             WebServiceParametersString.page.rawValue: page],

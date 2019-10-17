@@ -8,7 +8,6 @@
 
 import UIKit
 class TrendingViewController: UIViewController {
-
     @IBOutlet weak var tableView: DefaultTableView!
 
     var trendingViewModel: TrendingViewModel = TrendingViewModel(webService: WebService.shared)
@@ -28,16 +27,14 @@ class TrendingViewController: UIViewController {
         self.tableView.startLoader()
         trendingViewModel.fetchTrendingRepositories(tableView: self.tableView)
     }
-
 }
-
 extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == trendingViewModel.getTrendingRepoCount() - 1 {
             fetchTrendingRepositories()
         }
-
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: GitRepositoryTableViewCellStrings.cellIdentifier.rawValue,
+        guard let cell = tableView
+            .dequeueReusableCell(withIdentifier: GitRepositoryTableViewCellStrings.cellIdentifier.rawValue,
                                                        for: indexPath) as? GitRepositoryTableViewCell else {
             return UITableViewCell()
         }
@@ -53,7 +50,6 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
         return trendingViewModel.getTrendingRepoCount()
     }
 }
-
 extension TrendingViewController: EmptyStateViewDelegate {
     func reloadButtonPressed() {
         self.tableView.removeEmptyStateView()
