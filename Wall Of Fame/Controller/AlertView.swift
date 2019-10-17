@@ -7,6 +7,9 @@
 //
 
 import UIKit
+enum AlertViewStrings: String {
+    case nibName = "AlertView"
+}
 class AlertView: UIView {
     var didRetry:(() -> Void)!
     @IBOutlet weak var titlelabel: UILabel!
@@ -14,7 +17,7 @@ class AlertView: UIView {
     @IBOutlet weak var retryButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     class func instanceFromNib() -> AlertView {
-        return UINib(nibName: "AlertView", bundle: .main)
+        return UINib(nibName: AlertViewStrings.nibName.rawValue, bundle: .main)
             .instantiate(withOwner: nil, options: nil)[0] as? AlertView ?? AlertView()
     }
     @IBAction func dismissPressed(_ sender: Any) {

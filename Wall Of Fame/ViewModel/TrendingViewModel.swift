@@ -8,6 +8,9 @@
 
 import Foundation
 import Alamofire
+enum TrendingViewModelStrings: String {
+    case serverFailedTitle = "Couldn't fetch repositories."
+}
 class TrendingViewModel {
     private(set) var webService: WebService!
     var trendingGitRepositories: [GitRepositoryModel] = [GitRepositoryModel]()
@@ -53,12 +56,11 @@ extension TrendingViewModel {
             }
             tableView?.insertRows(at: indexes, with: .right)
             self.page += 1
-            print("page: \(self.page) size: \(trendingRepositories.count) totalSize: \(self.getTrendingRepoCount())")
             tableView?.stopLoader()
             completed?(true, nil)
         }) { (message) in
             tableView?.stopLoader()
-            UIView.showErrorDialog(title: "Couldn't fetch repositories.", details: message, retry: {
+            UIView.showErrorDialog(title: TrendingViewModelStrings.serverFailedTitle.rawValue, details: message, retry: {
                 self.fetchTrendingRepositories(tableView: tableView, completed: completed)
             })
             completed?(false, message)

@@ -7,6 +7,10 @@
 //
 
 import UIKit
+enum GitRepositoryTableViewCellStrings: String {
+    case nibName = "GitRepositoryTableViewCell"
+    case cellIdentifier = "gitRepoCell"
+}
 class GitRepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var ownerAliasImageView: UIImageView!
     @IBOutlet weak var ownerNameLabel: UILabel!

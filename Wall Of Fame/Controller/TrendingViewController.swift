@@ -17,7 +17,9 @@ class TrendingViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.bounces = false
-        tableView.register(UINib(nibName: "GitRepositoryTableViewCell", bundle: .main), forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: GitRepositoryTableViewCellStrings.nibName.rawValue,
+                                 bundle: .main),
+                           forCellReuseIdentifier: GitRepositoryTableViewCellStrings.cellIdentifier.rawValue)
         tableView.separatorStyle = .none
         tableView.emptyStateDelegate = self
         fetchTrendingRepositories()
@@ -35,7 +37,7 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
             fetchTrendingRepositories()
         }
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell",
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: GitRepositoryTableViewCellStrings.cellIdentifier.rawValue,
                                                        for: indexPath) as? GitRepositoryTableViewCell else {
             return UITableViewCell()
         }
