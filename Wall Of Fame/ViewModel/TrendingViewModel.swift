@@ -35,11 +35,11 @@ extension TrendingViewModel {
     func getRepoOwnerName(index: Int) -> String {
         return trendingGitRepositories[index].owner.name
     }
-    func getRepoOwnerAvatarURL(index: Int) -> URL {
-        return URL(string: trendingGitRepositories[index].owner.avatar)!
+    func getRepoOwnerAvatarURL(index: Int) -> String {
+        return trendingGitRepositories[index].owner?.avatar ?? ""
     }
     func getRepoOwnerAccountURL(index: Int) -> URL {
-        return URL(string: trendingGitRepositories[index].owner.accountURL)!
+        return URL(string: trendingGitRepositories[index].owner.accountUrl)!
     }
     func getTrendingRepoCount() -> Int {
         return trendingGitRepositories.count

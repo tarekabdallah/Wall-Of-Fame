@@ -42,7 +42,10 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         let repo = trendingViewModel.trendingGitRepositories[indexPath.row]
-        cell.setup(repo: repo, tableView: tableView, indexPath: indexPath)
+        cell.setup(repo: repo)
+        cell.ownerAliasImageView.downloadedFrom(link: trendingViewModel.getRepoOwnerAvatarURL(index: indexPath.row),
+                                           tableView: tableView,
+                                           indexPath: indexPath)
         cell.selectionStyle = .none
         return cell
     }

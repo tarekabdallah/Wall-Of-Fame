@@ -39,29 +39,30 @@ class WebService {
         let date = Calendar.current.date(byAdding: dateComponent, to: Date())!
         let dateFormatter = DateFormatter()
         dateFormatter.isLenient = true
-            dateFormatter.dateFormat  = "yyyy-MM-dd"
-
+        dateFormatter.dateFormat  = "yyyy-MM-dd"
+        
         Alamofire.request(WebServiceConstants.serverURL.rawValue,
                           parameters: [WebServiceParametersString.query.rawValue: "created:>\(dateFormatter.string(from: date))",
                             WebServiceParametersString.sort.rawValue: GitServerItemsString.star.rawValue,
                             WebServiceParametersString.order.rawValue: GitServerOrderingString.descending.rawValue,
                             WebServiceParametersString.page.rawValue: page],
                           encoding: URLEncoding.queryString)
-            .responseArray(queue: DispatchQueue.main,
-                           keyPath: WebServiceConstants.items.rawValue) { (response: DataResponse<[GitRepositoryModel]>) in
-            if let error = response.error {
-                let json = try? JSONSerialization.jsonObject(with: response.data ?? Data(),
-                                                             options: JSONSerialization
-                                                                .ReadingOptions
-                                                                .mutableLeaves) as? [String: Any]
-                failure(json?[WebServiceConstants.message.rawValue] as? String ?? error.localizedDescription)
-                return
-            }
-            if let repositories = response.result.value {
-                success(repositories)
-                return
-            }
-
+            .responseJSON(queue: DispatchQueue.main, options: .mutableLeaves) { (response) in
+                if let error = response.error {
+                    let json = try? JSONSerialization.jsonObject(with: response.data ?? Data(),
+                                                                 options: JSONSerialization
+                                                                    .ReadingOptions
+                                                                    .mutableLeaves) as? [String: Any]
+                    failure(json?[WebServiceConstants.message.rawValue] as? String ?? error.localizedDescription)
+                    return
+                }
+                if let data = response.data {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let serverResponse  = try? decoder.decode(ServerRsponse.self, from: data)
+                    success(serverResponse?.gitRepositories ?? [])
+                    return
+                }
         }
     }
 }
