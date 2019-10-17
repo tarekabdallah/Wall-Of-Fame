@@ -16,12 +16,12 @@ class DefaultTableView: UITableView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.estimatedRowHeight = 120
     }
 
     func startLoader() {
         self.createLoadingView()
         self.indicator.startAnimating()
-
     }
 
     func stopLoader() {
