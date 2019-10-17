@@ -13,8 +13,6 @@ import OHHTTPStubs
 
 class WallOfFameTests: XCTestCase {
     var trendingViewModel: TrendingViewModel!
-    let tableView = UITableView()
-
     override func setUp() {
         trendingViewModel = TrendingViewModel(webService: WebService.shared)
     }
@@ -29,7 +27,7 @@ class WallOfFameTests: XCTestCase {
             return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: nil)
         }
         let responseArrived = self.expectation(description: "Network Call expectation arrived")
-        trendingViewModel.fetchTrendingRepositories(tableView: self.tableView) { (_, _) in
+        trendingViewModel.fetchTrendingRepositories() { (_, _) in
             responseArrived.fulfill()
         }
         waitForExpectations(timeout: 2) { (_) in
@@ -44,7 +42,7 @@ class WallOfFameTests: XCTestCase {
         }
         let responsePage2Arrived = self.expectation(description: "Network Call expectation arrived page 2")
 
-        trendingViewModel.fetchTrendingRepositories(tableView: self.tableView) { (_, _) in
+        trendingViewModel.fetchTrendingRepositories() { (_, _) in
             responsePage2Arrived.fulfill()
         }
         waitForExpectations(timeout: 2) { (_) in
@@ -66,7 +64,7 @@ class WallOfFameTests: XCTestCase {
         }
         let responseArrived = self.expectation(description: "Network Call expectation arrived")
         var responseMessage: String?
-        trendingViewModel.fetchTrendingRepositories(tableView: self.tableView) { (_, message) in
+        trendingViewModel.fetchTrendingRepositories() { (_, message) in
             responseMessage = message
             responseArrived.fulfill()
         }
@@ -84,7 +82,7 @@ class WallOfFameTests: XCTestCase {
         }
         let responseArrived = self.expectation(description: "Network Call expectation arrived")
         var responseMessage: String?
-        trendingViewModel.fetchTrendingRepositories(tableView: self.tableView) { (_, message) in
+        trendingViewModel.fetchTrendingRepositories() { (_, message) in
             responseMessage = message
             responseArrived.fulfill()
         }
@@ -103,7 +101,7 @@ class WallOfFameTests: XCTestCase {
         }
         let responseArrived = self.expectation(description: "Network Call expectation arrived")
         var responseMessage: String?
-        trendingViewModel.fetchTrendingRepositories(tableView: self.tableView) { (_, message) in
+        trendingViewModel.fetchTrendingRepositories() { (_, message) in
             responseMessage = message
             responseArrived.fulfill()
         }

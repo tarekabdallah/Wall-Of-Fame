@@ -11,7 +11,8 @@ import Foundation
 class ServerRsponse: Decodable {
     var totalCount: Int!
     var incompleteResults: Bool!
-    var gitRepositories: [GitRepositoryModel]!
+    var gitRepositories: [GitRepositoryModel]?
+    
 
     enum CodingKeys: String, CodingKey {
         case gitRepositories = "items"

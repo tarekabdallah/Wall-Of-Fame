@@ -38,6 +38,18 @@
 		90A079302349BBDE009654AF /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0792F2349BBDE009654AF /* EmptyStateView.swift */; };
 		90BD375923462B1100BA843A /* Sucess.json in Resources */ = {isa = PBXBuildFile; fileRef = 90BD3757234628CD00BA843A /* Sucess.json */; };
 		90DA817B234631BD00A0F51D /* Failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 90DA8179234631AD00A0F51D /* Failure.json */; };
+		90E0FB7C2358A1A300AD4B9D /* DefaultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0792B23479A8C009654AF /* DefaultTableView.swift */; };
+		90E0FB7D2358A1A300AD4B9D /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908F8F4E23586DB0007BB5ED /* ServerResponse.swift */; };
+		90E0FB7E2358A1FD00AD4B9D /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093878E233A9FDF00732E73 /* TrendingViewController.swift */; };
+		90E0FB7F2358A1FD00AD4B9D /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015B6BE23478A2000413BD3 /* AlertView.swift */; };
+		90E0FB802358A1FD00AD4B9D /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0792F2349BBDE009654AF /* EmptyStateView.swift */; };
+		90E0FB812358A1FD00AD4B9D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90836F2423428F10000E7B35 /* UIImageViewExtension.swift */; };
+		90E0FB822358A1FD00AD4B9D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90836F26234292AF000E7B35 /* UIViewExtension.swift */; };
+		90E0FB832358A1FD00AD4B9D /* GitRepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90836F1C23428884000E7B35 /* GitRepositoryTableViewCell.swift */; };
+		90E0FB842358A42800AD4B9D /* GitRepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90836F1D23428884000E7B35 /* GitRepositoryTableViewCell.xib */; };
+		90E0FB852358A42800AD4B9D /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A0792D2349B9D1009654AF /* EmptyStateView.xib */; };
+		90E0FB862358A46000AD4B9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90938793233A9FE100732E73 /* Assets.xcassets */; };
+		90E0FB872358A46900AD4B9D /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9015B6BC23478A0E00413BD3 /* AlertView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -377,6 +389,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E0FB872358A46900AD4B9D /* AlertView.xib in Resources */,
+				90E0FB862358A46000AD4B9D /* Assets.xcassets in Resources */,
+				90E0FB842358A42800AD4B9D /* GitRepositoryTableViewCell.xib in Resources */,
+				90E0FB852358A42800AD4B9D /* EmptyStateView.xib in Resources */,
 				9015B6BA2346525100413BD3 /* Sucess.json in Resources */,
 				9015B6BB2346525100413BD3 /* Failure.json in Resources */,
 			);
@@ -500,6 +516,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E0FB7E2358A1FD00AD4B9D /* TrendingViewController.swift in Sources */,
+				90E0FB7F2358A1FD00AD4B9D /* AlertView.swift in Sources */,
+				90E0FB802358A1FD00AD4B9D /* EmptyStateView.swift in Sources */,
+				90E0FB812358A1FD00AD4B9D /* UIImageViewExtension.swift in Sources */,
+				90E0FB822358A1FD00AD4B9D /* UIViewExtension.swift in Sources */,
+				90E0FB832358A1FD00AD4B9D /* GitRepositoryTableViewCell.swift in Sources */,
+				90E0FB7C2358A1A300AD4B9D /* DefaultTableView.swift in Sources */,
+				90E0FB7D2358A1A300AD4B9D /* ServerResponse.swift in Sources */,
 				906ECA132346383F00323C6F /* WebService.swift in Sources */,
 				906ECA142346383F00323C6F /* TrendingViewModel.swift in Sources */,
 				906ECA152346383F00323C6F /* GitRepositoryModel.swift in Sources */,

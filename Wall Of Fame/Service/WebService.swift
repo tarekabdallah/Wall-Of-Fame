@@ -60,14 +60,15 @@ class WebService {
 
         let request = URLRequest(url: url)
 
-        let task = URLSession.shared.dataTask(with: request) { (responseData, _, error) in
-            guard error == nil else {
+        let task = URLSession.shared.dataTask(with: request) { (responseData, response, error) in
+            let httpResponse = response as? HTTPURLResponse
+            guard error == nil && (httpResponse?.statusCode ?? 0) == 200 else {
                 let json = try? JSONSerialization.jsonObject(with: responseData ?? Data(),
                                                              options: JSONSerialization
                                                                 .ReadingOptions
                                                                 .mutableLeaves) as? [String: Any]
                 DispatchQueue.main.async {
-                    failure(json?[WebServiceConstants.message.rawValue] as? String ?? error!.localizedDescription)
+                    failure(json?[WebServiceConstants.message.rawValue] as? String ?? "Something went wrong")
                 }
                 return
 
