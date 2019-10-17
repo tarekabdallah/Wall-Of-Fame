@@ -38,30 +38,45 @@ class WebService {
         let dateFormatter = DateFormatter()
         dateFormatter.isLenient = true
         dateFormatter.dateFormat  = "yyyy-MM-dd"
-        Alamofire.request(WebServiceConstants.serverURL.rawValue,
-                          parameters: [WebServiceParametersString
-                            .query
-                            .rawValue: "created:>\(dateFormatter.string(from: date))",
-                            WebServiceParametersString.sort.rawValue: GitServerItemsString.star.rawValue,
-                            WebServiceParametersString.order.rawValue: GitServerOrderingString.descending.rawValue,
-                            WebServiceParametersString.page.rawValue: page],
-                          encoding: URLEncoding.queryString)
-            .responseJSON(queue: DispatchQueue.main, options: .mutableLeaves) { (response) in
-                if let error = response.error {
-                    let json = try? JSONSerialization.jsonObject(with: response.data ?? Data(),
-                                                                 options: JSONSerialization
-                                                                    .ReadingOptions
-                                                                    .mutableLeaves) as? [String: Any]
-                    failure(json?[WebServiceConstants.message.rawValue] as? String ?? error.localizedDescription)
-                    return
-                }
-                if let data = response.data {
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let serverResponse  = try? decoder.decode(ServerRsponse.self, from: data)
-                    success(serverResponse?.gitRepositories ?? [])
-                    return
-                }
+        var urlComponents = URLComponents(string: WebServiceConstants.serverURL.rawValue)
+        urlComponents?.queryItems = [ URLQueryItem(name: WebServiceParametersString
+            .query
+            .rawValue, value: "created:>\(dateFormatter.string(from: date))"),
+        URLQueryItem(name: WebServiceParametersString.sort.rawValue,
+                     value: GitServerItemsString.star.rawValue),
+        URLQueryItem(name: WebServiceParametersString.order.rawValue,
+                     value: GitServerOrderingString.descending.rawValue),
+        URLQueryItem(name: WebServiceParametersString.page.rawValue,
+                     value: "\(page)")
+        ]
+        guard let url = urlComponents?.url else {
+            return
         }
+
+        let request = URLRequest(url: url)
+
+        let task = URLSession.shared.dataTask(with: request) { (responseData, response, error) in
+            guard error == nil else{
+                let json = try? JSONSerialization.jsonObject(with: responseData ?? Data(),
+                                                             options: JSONSerialization
+                                                                .ReadingOptions
+                                                                .mutableLeaves) as? [String: Any]
+                DispatchQueue.main.async {
+                    failure(json?[WebServiceConstants.message.rawValue] as? String ?? error!.localizedDescription)
+                }
+                return
+
+            }
+            if let data = responseData {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let serverResponse  = try? decoder.decode(ServerRsponse.self, from: data)
+                DispatchQueue.main.async {
+                    success(serverResponse?.gitRepositories ?? [])
+                }
+                return
+            }
+        }
+        task.resume()
     }
 }

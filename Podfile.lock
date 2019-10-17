@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (4.9.0)
   - OHHTTPStubs/Core (8.0.0)
   - OHHTTPStubs/Default (8.0.0):
     - OHHTTPStubs/Core
@@ -16,21 +15,18 @@ PODS:
   - SwiftLint (0.35.0)
 
 DEPENDENCIES:
-  - Alamofire
   - OHHTTPStubs/Swift
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
     - OHHTTPStubs
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
   SwiftLint: 5553187048b900c91aa03552807681bb6b027846
 
-PODFILE CHECKSUM: babab6e01a7642759b0dab96831b29febea1cfd1
+PODFILE CHECKSUM: b25c7d54cb59ba40e99c5e258b1629fd213a2808
 
 COCOAPODS: 1.6.1

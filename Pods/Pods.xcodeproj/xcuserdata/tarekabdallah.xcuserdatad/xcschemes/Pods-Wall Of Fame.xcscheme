@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C166731C6FC99EA34F36AA7F0C87DA85"
+               BlueprintIdentifier = "43FDE99AB47627CDB24AE916D186DED0"
                BuildableName = "Pods_Wall_Of_Fame.framework"
                BlueprintName = "Pods-Wall Of Fame"
                ReferencedContainer = "container:Pods.xcodeproj">

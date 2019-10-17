@@ -3,7 +3,6 @@
 use_frameworks!
 
 def standard_pods
-  pod 'Alamofire'
   pod 'OHHTTPStubs/Swift'
   pod 'SwiftLint'
 

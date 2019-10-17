@@ -197,7 +197,7 @@
 		909387A0233A9FE100732E73 /* Wall Of FameTests */ = {
 			isa = PBXGroup;
 			children = (
-				90BD37562346289000BA843A /* JsonResponses */,
+				90BD37562346289000BA843A /* MockJsonResponses */,
 				909387A1233A9FE100732E73 /* Wall_Of_FameTests.swift */,
 				909387A3233A9FE100732E73 /* Info.plist */,
 			);
@@ -241,13 +241,13 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		90BD37562346289000BA843A /* JsonResponses */ = {
+		90BD37562346289000BA843A /* MockJsonResponses */ = {
 			isa = PBXGroup;
 			children = (
 				90BD3757234628CD00BA843A /* Sucess.json */,
 				90DA8179234631AD00A0F51D /* Failure.json */,
 			);
-			path = JsonResponses;
+			path = MockJsonResponses;
 			sourceTree = "<group>";
 		};
 		97E06532207E9D24DC54F0A8 /* Frameworks */ = {
@@ -420,14 +420,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Wall Of Fame/Pods-Wall Of Fame-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,14 +442,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Wall Of FameTests/Pods-Wall Of FameTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
